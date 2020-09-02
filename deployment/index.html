@@ -417,7 +417,7 @@
 </code></pre></div>
 
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OSX or Linux (Bash)</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OSX (Bash)</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VAULT_PASSWORD</span><span class="o">=</span>replace_me_with_pw
 </code></pre></div>
 
@@ -438,7 +438,7 @@ heroku git:remote -a crwa-flagging
 </code></pre></div>
 
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">OSX or Linux (Bash)</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">OSX (Bash)</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>heroku config:set <span class="nv">VAULT_PASSWORD</span><span class="o">=</span><span class="si">${</span><span class="nv">VAULT_PASSWORD</span><span class="si">}</span>
 </code></pre></div>
 
@@ -523,7 +523,7 @@ heroku logs --app crwa-flagging-staging --tail
 </code></pre></div>
 
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">OSX or Linux (Bash)</label><div class="tabbed-content">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">OSX (Bash)</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>heroku config:set --app crwa-flagging-staging <span class="nv">VAULT_PASSWORD</span><span class="o">=</span><span class="si">${</span><span class="nv">VAULT_PASSWORD</span><span class="si">}</span>
 git push staging master
 heroku logs --app crwa-flagging-staging --tail
