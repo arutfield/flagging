@@ -1,257 +1,625 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Deployment - Water MKDocs</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Deployment";
-    var mkdocs_page_input_path = "deployment.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Water MKDocs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+    
+    
+      
+        <title>Deployment - CRWA Flagging Website Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4dd2dd8d.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.6a5ad368.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009485">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Opens+Sans:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Opens Sans",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deployment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="CRWA Flagging Website Documentation" class="md-header-nav__button md-logo" aria-label="CRWA Flagging Website Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../background/">Background</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Deployment</a>
-    <ul class="subnav">
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            CRWA Flagging Website Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
             
-    <li class="toctree-l2"><a href="#production-deployment">Production Deployment</a></li>
+              Deployment
+            
+          </span>
+        </div>
+      
+    </div>
     
-        <ul>
-        
-            <li><a class="toctree-l3" href="#deploying-for-the-first-time">Deploying for the first time</a></li>
-        
-            <li><a class="toctree-l3" href="#subsequent-deployments">Subsequent deployments</a></li>
-        
-            <li><a class="toctree-l3" href="#staging-and-production-split">Staging and Production Split</a></li>
-        
-        </ul>
-    
-
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../system/">System</a>
-	    </li>
-          
-        </ul>
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
       </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Water MKDocs</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-    
-    <li>Deployment</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
+    </div>
+  </div>
 </div>
-          <div role="main">
-            <div class="section">
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="CRWA Flagging Website Documentation" class="md-nav__button md-logo" aria-label="CRWA Flagging Website Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    CRWA Flagging Website Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../admin/" title="Admin" class="md-nav__link">
+      Admin
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../background/" title="Background" class="md-nav__link">
+      Background
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Deployment
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Deployment" class="md-nav__link md-nav__link--active">
+      Deployment
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-for-the-first-time" class="md-nav__link">
+    Deploying for the first time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsequent-deployments" class="md-nav__link">
+    Subsequent deployments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staging-and-production-split" class="md-nav__link">
+    Staging and Production Split
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../system/" title="System" class="md-nav__link">
+      System
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Development
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development/history/" title="History" class="md-nav__link">
+      History
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deploying-for-the-first-time" class="md-nav__link">
+    Deploying for the first time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsequent-deployments" class="md-nav__link">
+    Subsequent deployments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staging-and-production-split" class="md-nav__link">
+    Staging and Production Split
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
               
-                <h1 id="production-deployment">Production Deployment</h1>
+                
+                
+                  
+                
+                
+                <h1 id="deployment">Deployment</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide is an instruction manual on how to deploy the flagging website to internet via Heroku. If you just want to run the website locally, you do not need Heroku. Instead, check out the <a href="/development">development</a> guide.</p>
+</div>
 <p>The following tools are required to deploy the website:</p>
 <ul>
 <li><a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a></li>
 <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a></li>
 </ul>
 <h2 id="deploying-for-the-first-time">Deploying for the first time</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this section, the project name is assumed to be <code>crwa-flagging</code>. If you are deploying to another URL, such as <code>crwa-flagging-staging</code> or another personal domain, then replace each reference to <code>crwa-flagging</code> with that.</p>
+</div>
 <p>If you've never deployed the app from your computer, follow these instructions.</p>
-<p>Note: the project name here is assumed to be <code>crwa-flagging</code>.</p>
 <ol>
-<li>If you have not already done so, pull the repository to your computer, and then change your directory to it.</li>
+<li>If you have not already done so, pull the repository to your computer, and then change your directory to it:</li>
 </ol>
-<pre><code class="shell">git clone https://github.com/codeforboston/flagging.git
-cd ./flagging
-</code></pre>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/codeforboston/flagging.git
+<span class="nb">cd</span> ./flagging
+</code></pre></div>
 
-<ol>
+<p>Additionally, make sure the <code>VAULT_PASSWORD</code> environment variable is set if it has not already been:</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows (CMD)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nb">set</span> <span class="nv">VAULT_PASSWORD</span><span class="o">=</span>replace_me_with_pw
+</code></pre></div>
+
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OSX or Linux (Bash)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VAULT_PASSWORD</span><span class="o">=</span>replace_me_with_pw
+</code></pre></div>
+
+</div>
+</div>
+<ol start="2">
 <li>Login to Heroku, and add Heroku as a remote repo using Heroku's CLI:</li>
 </ol>
-<pre><code class="shell">heroku login
+<div class="highlight"><pre><span></span><code>heroku login
 heroku git:remote -a crwa-flagging
-</code></pre>
+</code></pre></div>
 
-<ol>
+<ol start="3">
 <li>Add the vault password as an environment variable to Heroku.</li>
 </ol>
-<pre><code class="shell">heroku config:set VAULT_PASSWORD=replace_me_with_pw
-</code></pre>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Windows (CMD)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>heroku config:set <span class="nv">VAULT_PASSWORD</span><span class="o">=</span>%VAULT_PASSWORD%
+</code></pre></div>
 
-<ol>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">OSX or Linux (Bash)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>heroku config:set <span class="nv">VAULT_PASSWORD</span><span class="o">=</span><span class="si">${</span><span class="nv">VAULT_PASSWORD</span><span class="si">}</span>
+</code></pre></div>
+
+</div>
+</div>
+<ol start="4">
 <li>Now deploy the app!</li>
 </ol>
-<pre><code class="shell">git push heroku master
-</code></pre>
+<div class="highlight"><pre><span></span><code>git push heroku master
+</code></pre></div>
 
-<ol>
+<ol start="5">
 <li>Now try the following:</li>
 </ol>
-<pre><code class="shell">heroku logs --tail
-</code></pre>
+<div class="highlight"><pre><span></span><code>heroku logs --tail
+</code></pre></div>
 
-<ol>
+<ol start="6">
 <li>If everything worked out, you should see the following at or near the bottom of the log:</li>
 </ol>
-<pre><code class="shell">2020-06-13T23:17:54.000000+00:00 app[api]: Build succeeded
-</code></pre>
+<div class="highlight"><pre><span></span><code>2020-06-13T23:17:54.000000+00:00 app[api]: Build succeeded
+</code></pre></div>
 
-<p>If you see insted see something like <code>2020-06-13T23:17:54.000000+00:00 heroku[web.1]: State changed from starting to crashed</code>, then read the rest of the output to see what happened (there will likely be a lot of stuff, so dig through it). The most common error when deploying to production will be a <code>RuntimeError: Unable to load the vault; bad password provided</code> which is self-explanatory. Update the password, and the website will automatically attempt to redeploy. If you don't see that error, then try to self-diagnose.</p>
-<ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you see instead see something like <code>[...] State changed from starting to crashed</code>, then read the rest of the output to see what happened. The most common error when deploying to production will be a <code>RuntimeError: Unable to load the vault; bad password provided</code> which is self-explanatory. Update the password, and the website will automatically attempt to redeploy. If you don't see that error, then try to self-diagnose.</p>
+</div>
+<ol start="7">
 <li>Go see the website for yourself!</li>
 </ol>
 <h2 id="subsequent-deployments">Subsequent deployments</h2>
 <ol>
-<li>
-<p>Heroku doesn't allow you to redeploy the website unless you create a new commit. Add some updates if you need to with <code>git add .</code> then <code>git commit -m "describe your changes here"</code>.</p>
-</li>
-<li>
-<p>Once you have done that, Heroku will simply redeploy the site when you merge your working branch:</p>
-</li>
+<li>Heroku doesn't allow you to redeploy the website unless you create a new commit. Add some updates if you need to with <code>git add .</code> then <code>git commit -m "describe your changes here"</code>.</li>
 </ol>
-<pre><code class="shell">git push heroku master
-</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <em>very</em> rare case you simply need to redeploy without making any changes to the site, in lieu of the above, simply do <code>git commit --allow-empty -m "redeploy"</code>.</p>
+</div>
+<ol start="2">
+<li>Once you have done that, Heroku will redeploy the site when you merge your working branch:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git push heroku master
+</code></pre></div>
 
 <h2 id="staging-and-production-split">Staging and Production Split</h2>
-<p>It is recommended, though not required, that you have both "staging" and "production" environments for the website (see <a href="https://en.wikipedia.org/wiki/Deployment_environment#Staging">here</a> for an explanation), and furthermore it is recommended you deploy to staging and play around with the website to see if it looks right before you deploy to prodution.</p>
-<p>Managing effectively two separate Heroku apps from a single repository requires a bit of knowledge about how git works. Basically what you're doing is connecting to two separate remote git repositories. The default remote repo is called <code>heroku</code> and it was created by Heroku's CLI. But since you now have two Heroku remotes, the Heroku CLI doesn't know what it's supposed to name the 2nd one. So you have to manually name it using git.</p>
+<p>It is recommended, though not required, that you have both "staging" and "production" environments for the website (see <a href="https://en.wikipedia.org/wiki/Deployment_environment#Staging">here</a> for an explanation), and furthermore it is recommended you deploy to staging and play around with the website to see if it looks right before you ever deploy to production.</p>
+<p>Managing effectively two separate Heroku apps from a single repository requires a bit of knowledge about how git works. Basically what you're doing is connecting to two separate remote git repositories. The default remote repo is called <code>heroku</code> and it was created by Heroku's CLI. But since you now have two Heroku remote repositories, the Heroku CLI doesn't know what it's supposed to name the 2nd one. So you have to manually name it using git.</p>
 <ol>
 <li>Run the following command to create a staging environment if it does not already exist.</li>
 </ol>
-<pre><code class="shell">heroku create crwa-flagging-staging
-</code></pre>
+<div class="highlight"><pre><span></span><code>heroku create crwa-flagging-staging
+</code></pre></div>
 
-<ol>
+<ol start="2">
 <li>Once it exists, add the staging environment as a remote; check to make sure all the remotes look right. The <code>heroku</code> remote should correspond with the production environment, and the <code>staging</code> remote should correspond with the staging environment you just created.</li>
 </ol>
-<pre><code class="shell">git remote add staging https://git.heroku.com/crwa-flagging-staging.git
+<div class="highlight"><pre><span></span><code>git remote add staging https://git.heroku.com/crwa-flagging-staging.git
 git remote -v
-</code></pre>
+</code></pre></div>
 
-<ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The above command should output something like this:</p>
+<div class="highlight"><pre><span></span><code>heroku  https://git.heroku.com/crwa-flagging.git <span class="o">(</span>fetch<span class="o">)</span>
+heroku  https://git.heroku.com/crwa-flagging.git <span class="o">(</span>push<span class="o">)</span>
+origin  https://github.com/&lt;your_github_username_here&gt;/flagging.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  https://github.com/&lt;your_github_username_here&gt;/flagging.git <span class="o">(</span>push<span class="o">)</span>
+staging https://git.heroku.com/crwa-flagging-staging.git <span class="o">(</span>fetch<span class="o">)</span>
+staging https://git.heroku.com/crwa-flagging-staging.git <span class="o">(</span>push<span class="o">)</span>
+upstream        https://github.com/codeforboston/flagging.git <span class="o">(</span>fetch<span class="o">)</span>
+upstream        https://github.com/codeforboston/flagging.git <span class="o">(</span>push<span class="o">)</span>
+</code></pre></div>
+
+</div>
+<ol start="3">
 <li>Now all of your <code>heroku</code> commands are going to require specifying the app, but the steps to deploy in staging are otherwise similar to the production deployment:</li>
 </ol>
-<pre><code class="shell">heroku config:set --app crwa-flagging-staging VAULT_PASSWORD=replace_me_with_pw
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Windows (CMD)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>heroku config:set --app crwa-flagging-staging <span class="nv">VAULT_PASSWORD</span><span class="o">=</span>%VAULT_PASSWORD%
 git push staging master
 heroku logs --app crwa-flagging-staging --tail
-</code></pre>
+</code></pre></div>
 
-<ol>
-<li>Check out the website and make sure it looks right.</li>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">OSX or Linux (Bash)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>heroku config:set --app crwa-flagging-staging <span class="nv">VAULT_PASSWORD</span><span class="o">=</span><span class="si">${</span><span class="nv">VAULT_PASSWORD</span><span class="si">}</span>
+git push staging master
+heroku logs --app crwa-flagging-staging --tail
+</code></pre></div>
+
+</div>
+</div>
+<ol start="4">
+<li>Check out the website in the staging environment and make sure it looks right.</li>
 </ol>
+                
               
-            </div>
+              
+                
+
+
+              
+            </article>
           </div>
-          <footer>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../system/" class="btn btn-neutral float-right" title="System">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../background/" class="btn btn-neutral" title="Background"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../background/" title="Background" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Background
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../system/" title="System" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                System
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     </div>
   
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/codeforboston/flagging" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.meetup.com/Code-for-Boston/" target="_blank" rel="noopener" title="www.meetup.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M99 414.3c1.1 5.7-2.3 11.1-8 12.3-5.4 1.1-10.9-2.3-12-8-1.1-5.4 2.3-11.1 7.7-12.3 5.4-1.2 11.1 2.3 12.3 8zm143.1 71.4c-6.3 4.6-8 13.4-3.7 20 4.6 6.6 13.4 8.3 20 3.7 6.3-4.6 8-13.4 3.4-20-4.2-6.5-13.1-8.3-19.7-3.7zm-86-462.3c6.3-1.4 10.3-7.7 8.9-14-1.1-6.6-7.4-10.6-13.7-9.1-6.3 1.4-10.3 7.7-9.1 14 1.4 6.6 7.6 10.6 13.9 9.1zM34.4 226.3c-10-6.9-23.7-4.3-30.6 6-6.9 10-4.3 24 5.7 30.9 10 7.1 23.7 4.6 30.6-5.7 6.9-10.4 4.3-24.1-5.7-31.2zm272-170.9c10.6-6.3 13.7-20 7.7-30.3-6.3-10.6-19.7-14-30-7.7s-13.7 20-7.4 30.6c6 10.3 19.4 13.7 29.7 7.4zm-191.1 58c7.7-5.4 9.4-16 4.3-23.7s-15.7-9.4-23.1-4.3c-7.7 5.4-9.4 16-4.3 23.7 5.1 7.8 15.6 9.5 23.1 4.3zm372.3 156c-7.4 1.7-12.3 9.1-10.6 16.9 1.4 7.4 8.9 12.3 16.3 10.6 7.4-1.4 12.3-8.9 10.6-16.6-1.5-7.4-8.9-12.3-16.3-10.9zm39.7-56.8c-1.1-5.7-6.6-9.1-12-8-5.7 1.1-9.1 6.9-8 12.6 1.1 5.4 6.6 9.1 12.3 8 5.4-1.5 9.1-6.9 7.7-12.6zM447 138.9c-8.6 6-10.6 17.7-4.9 26.3 5.7 8.6 17.4 10.6 26 4.9 8.3-6 10.3-17.7 4.6-26.3-5.7-8.7-17.4-10.9-25.7-4.9zm-6.3 139.4c26.3 43.1 15.1 100-26.3 129.1-17.4 12.3-37.1 17.7-56.9 17.1-12 47.1-69.4 64.6-105.1 32.6-1.1.9-2.6 1.7-3.7 2.9-39.1 27.1-92.3 17.4-119.4-22.3-9.7-14.3-14.6-30.6-15.1-46.9-65.4-10.9-90-94-41.1-139.7-28.3-46.9.6-107.4 53.4-114.9C151.6 70 234.1 38.6 290.1 82c67.4-22.3 136.3 29.4 130.9 101.1 41.1 12.6 52.8 66.9 19.7 95.2zm-70 74.3c-3.1-20.6-40.9-4.6-43.1-27.1-3.1-32 43.7-101.1 40-128-3.4-24-19.4-29.1-33.4-29.4-13.4-.3-16.9 2-21.4 4.6-2.9 1.7-6.6 4.9-11.7-.3-6.3-6-11.1-11.7-19.4-12.9-12.3-2-17.7 2-26.6 9.7-3.4 2.9-12 12.9-20 9.1-3.4-1.7-15.4-7.7-24-11.4-16.3-7.1-40 4.6-48.6 20-12.9 22.9-38 113.1-41.7 125.1-8.6 26.6 10.9 48.6 36.9 47.1 11.1-.6 18.3-4.6 25.4-17.4 4-7.4 41.7-107.7 44.6-112.6 2-3.4 8.9-8 14.6-5.1 5.7 3.1 6.9 9.4 6 15.1-1.1 9.7-28 70.9-28.9 77.7-3.4 22.9 26.9 26.6 38.6 4 3.7-7.1 45.7-92.6 49.4-98.3 4.3-6.3 7.4-8.3 11.7-8 3.1 0 8.3.9 7.1 10.9-1.4 9.4-35.1 72.3-38.9 87.7-4.6 20.6 6.6 41.4 24.9 50.6 11.4 5.7 62.5 15.7 58.5-11.1zm5.7 92.3c-10.3 7.4-12.9 22-5.7 32.6 7.1 10.6 21.4 13.1 32 6 10.6-7.4 13.1-22 6-32.6-7.4-10.6-21.7-13.5-32.3-6z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/codeforboston" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    </div>
+  </div>
 </footer>
       
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
+    </div>
+    
+      <script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
-        <span><a href="../background/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../system/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-
-</body>
+    
+  </body>
 </html>

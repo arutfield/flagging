@@ -10,18 +10,18 @@
       
       
       
-      <link rel="shortcut icon" href="/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
     
     
       
-        <title>CRWA Flagging Website Documentation</title>
+        <title>Database Project In-depth Guide - CRWA Flagging Website Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.4dd2dd8d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4dd2dd8d.min.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/palette.6a5ad368.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.6a5ad368.min.css">
       
       
         
@@ -57,6 +57,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#database-project-in-depth-guide" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -64,7 +69,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="/." title="CRWA Flagging Website Documentation" class="md-header-nav__button md-logo" aria-label="CRWA Flagging Website Documentation">
+    <a href=".." title="CRWA Flagging Website Documentation" class="md-header-nav__button md-logo" aria-label="CRWA Flagging Website Documentation">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -81,7 +86,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              
+              Database Project In-depth Guide
             
           </span>
         </div>
@@ -138,7 +143,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="CRWA Flagging Website Documentation" class="md-nav__button md-logo" aria-label="CRWA Flagging Website Documentation">
+    <a href=".." title="CRWA Flagging Website Documentation" class="md-nav__button md-logo" aria-label="CRWA Flagging Website Documentation">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -155,7 +160,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/." title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -167,7 +172,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/admin/" title="Admin" class="md-nav__link">
+    <a href="../admin/" title="Admin" class="md-nav__link">
       Admin
     </a>
   </li>
@@ -179,7 +184,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/background/" title="Background" class="md-nav__link">
+    <a href="../background/" title="Background" class="md-nav__link">
       Background
     </a>
   </li>
@@ -191,7 +196,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/deployment/" title="Deployment" class="md-nav__link">
+    <a href="../deployment/" title="Deployment" class="md-nav__link">
       Deployment
     </a>
   </li>
@@ -203,7 +208,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/system/" title="System" class="md-nav__link">
+    <a href="../system/" title="System" class="md-nav__link">
       System
     </a>
   </li>
@@ -236,7 +241,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/development/history/" title="History" class="md-nav__link">
+    <a href="../development/history/" title="History" class="md-nav__link">
       History
     </a>
   </li>
@@ -254,12 +259,65 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+                
+                  
+                
+                
+                <h1 id="database-project-in-depth-guide">Database Project In-depth Guide</h1>
+<p>We will be using PostgreSQL, a free, open-source database management system sucessor to UC Berkeley's Ingres Database but also support SQL language</p>
+<p><strong>On OSX or Linux:</strong></p>
+<p>We need to setup postgres database first thus enter into the bash terminals:</p>
+<p><div class="highlight"><pre><span></span><code>brew install postgresql
+brew services start postgresql
+</code></pre></div>
+Explanation: We will need to install postgresql in order to create our database. With postgresql installed, we can start up database locally or in our computer. We use <code>brew</code> from homebrew to install and start postgresql services. To get homebrew, consult with this link: https://brew.sh/</p>
+<p>To  begin initialize a database, enter into the bash terminal: </p>
+<p>```shell script
+export POSTGRES_PASSWORD=<em>enter_password_here</em>
+createdb -U <em>enter_username_here</em> flagging
+psql -U <em>enter_username_here</em> -d flagging -c "DROP USER IF EXISTS flagging; CREATE USER flagging SUPERUSER PASSWORD '${POSTGRES_PASSWORD}'"
+<div class="highlight"><pre><span></span><code>Explanation: Postgres password can be any password you choose. We exported your chosen postgres password into `POSTGRES_PASSWORD`, an environment variable, which is a variable set outside a program and is independent in each session. Next, we created a database called `flagging` using a username/rolename, which needs to be a Superuser or having all accesses of postgres. By default, the Superuser rolename can be `postgres` or the username for you OS. To find out, you can go into psql terminal, which we will explain below, and enter `\du` to see all usernames. Finally, we add the database `flagging` using the env variable in which we save our password. 
 
+You can see the results using the postgresql terminal which you can open by entering:
+</code></pre></div>
+psql
+<div class="highlight"><pre><span></span><code>Below are a couple of helpful commands you can use in the postgresql:
+</code></pre></div>
+\q --to quit
+\c <em>database_name</em> --to connect to database
+\d --show what tables in current database
+\du --show database users
+\dt --show tables of current database
+<div class="highlight"><pre><span></span><code>To run the website, in the project directory `flagging` enter:
+
+```shell script
+sh run_unix_dev.sh
+</code></pre></div></p>
+<p>Running the bash script <code>run_unix_dev.sh</code> found in the <code>flagging</code> folder. Inside the scirpt, it defines environment variables <code>FLASK_APP</code> and <code>FLASK_ENV</code> which we need to find app.py. We also export the user input for offline mode, vault password, and postgres password for validation. Finally we initialize a database with a custom flask command <code>flask init-db</code> and finally run the flask application <code>flask run</code>.</p>
+<p>Regarding in how flask application connects to postgresql, <code>database.py</code> creates an object  <code>db = SQLAlchemy()</code> which we will refer again in <code>app.py</code> to configure the flask application to support postgressql <code>from .data import db</code> <code>db.init_app(app)</code>. (We can import the <code>db</code> object beecause <code>__init__.py</code> make the object available as a global variable) </p>
+<p>Flask supports creating custom commands <code>init-db</code> for initializing database and <code>update-db</code> for updating database. <code>init-db</code> command calls <code>init_db</code> function from <code>database.py</code> and essentially calls <code>execute_sql()</code> which executes the sql file <code>schema.sql</code> that creates all the tables. Then calls <code>update_database()</code> which fills the database with data from usgs, hobolink, etc. <code>update-db</code> command primarily just udpates the table thus does not create new tables. Note: currently we are creating and deleting the database everytime the bashscript and program runs. </p>
+                
+              
               
                 
 
@@ -320,15 +378,15 @@
       
     </div>
     
-      <script src="/assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="/assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "/",
+          base: "..",
           features: [],
           search: Object.assign({
-            worker: "/assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
