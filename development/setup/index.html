@@ -336,6 +336,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-the-website-locally" class="md-nav__link">
+    Run the Website Locally
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -394,6 +401,13 @@
         <li class="md-nav__item">
   <a href="#download-and-setup-the-code-base" class="md-nav__link">
     Download and Setup the Code Base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-website-locally" class="md-nav__link">
+    Run the Website Locally
   </a>
   
 </li>
@@ -534,6 +548,41 @@ git fetch upstream
 <p class="admonition-title">Warning</p>
 <p>If you do any commits to the repo, <em>please make sure <code>.env</code> is properly gitignored!!!</em> (<code>.flaskenv</code> does not need to be gitignored, only <code>.env</code>.) The vault password is sensitive information; it should not be shared with others and it should not be posted online publicly.</p>
 </div>
+<h2 id="run-the-website-locally">Run the Website Locally</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From here on in the documentation, each terminal command assumes your terminal's working directory is pointed toward the <code>flagging</code> directory.</p>
+</div>
+<ol>
+<li>Run the following:</li>
+</ol>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Windows (CMD)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>run_windows_dev
+</code></pre></div>
+
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">OSX (Bash)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>sh run_unix_dev.sh
+</code></pre></div>
+
+</div>
+</div>
+<ol start="2">
+<li>
+<p>For the first prompt, type <code>y</code> to run the website in offline mode. For the subsequent two prompts, click "Enter" through them without inputting anything.</p>
+</li>
+<li>
+<p>You should see something like the following:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code> * Serving Flask app &quot;flagging_site:create_app&quot; (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+</code></pre></div>
+
+<p>Point your browser of choiec to the URL shown in the terminal output. If everything worked out, the website should be running on your local computer!</p>
                 
               
               
