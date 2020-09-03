@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#requirements" class="md-skip">
+        <a href="#setup" class="md-skip">
           Skip to content
         </a>
       
@@ -310,8 +310,28 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#postgres-installation" class="md-nav__link">
     Postgres installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-and-setup-the-repo" class="md-nav__link">
+    Download and Setup the Repo
   </a>
   
 </li>
@@ -352,8 +372,28 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#postgres-installation" class="md-nav__link">
     Postgres installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-and-setup-the-repo" class="md-nav__link">
+    Download and Setup the Repo
   </a>
   
 </li>
@@ -374,14 +414,35 @@
                   
                 
                 
-                <h1 id="requirements">Requirements</h1>
+                <h1 id="setup">Setup</h1>
+<p>This is a guide on how to do your first-time setup for running the website locally and developing it. You should follow this guide before doing anything else!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The documentation assumes you followed all the instructions in this setup document carefully and exactly.</p>
+</div>
+<h2 id="dependencies">Dependencies</h2>
+<p>Install all of the following programs onto your computer:</p>
+<p><strong>Required:</strong></p>
 <ul>
-<li><a href="https://www.python.org/downloads/">Python 3</a>, specifically 3.7 or higher.</li>
-<li>Postgres (see installation instructions below)</li>
-<li>(OSX only) <a href="https://brew.sh/">Homebrew</a></li>
+<li><a href="https://www.python.org/downloads/">Python 3</a> - specifically 3.7 or higher</li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a> (first time setup guide <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">here</a>)</li>
+<li><a href="https://www.postgresql.org/">Postgres</a> <em>(see installation instructions below)</em></li>
+<li><em>(OSX only)</em> <a href="https://brew.sh/">Homebrew</a></li>
 </ul>
+<p><strong>Recommended:</strong></p>
+<ul>
+<li>A good text editor or IDE, such as <a href="https://atom.io/">Atom.io</a> (which is lightweight and beginner friendly) or <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> (which is powerful but bulky and geared toward advanced users).</li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Heroku CLI</a> <em>(required for remote deployment to Heroku.)</em></li>
+</ul>
+<p><strong>Other:</strong></p>
+<ul>
+<li>It is strongly recommend that you create a <a href="https://github.com/">GitHub account</a> if you haven't done so already. The GitHub account should have the same email as the one registered to your <code>git config --global user.email</code> that you set in the first time git setup.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>(Windows users only)</em> At least two Windows users have had problems getting Python working in Windows for the first time. Check out some people troubleshooting various Python installation related issues <a href="https://stackoverflow.com/questions/13596505/python-not-working-in-command-prompt">on StackOverflow</a>. Also note that the command to run Python in Windows may be <code>python</code>, <code>python3</code>, <code>py</code>, or <code>py3</code>. Figure out which one works for you (type <code>exit()</code> then press Enter to leave the Python shell.)</p>
+</div>
 <h3 id="postgres-installation">Postgres installation</h3>
-<p>Installing Postgres</p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows (CMD)</label><div class="tabbed-content">
 <ol>
 <li>
@@ -444,6 +505,35 @@
 <p>Some solutions <a href="https://superuser.com/questions/244589/prevent-postgresql-from-running-at-startup">here</a>.</p>
 </div>
 </div>
+</div>
+<h2 id="download-and-setup-the-repo">Download and Setup the Repo</h2>
+<ol>
+<li>Fork the <a href="https://github.com/codeforboston/flagging/">main GitHub repo</a> to your personal GitHub account. You can do that by going to the Code For Boston flagging repo and clicking on this button:</li>
+</ol>
+<p><img alt="" src="../../img/github_fork.png" /></p>
+<ol start="2">
+<li>
+<p>Point your terminal (Bash on OSX, command prompt on Windows) to the directory you want to put the <code>/flagging</code> project folder inside of. E.g. if you want the project folder to be located at <code>&lt;yourname&gt;/Documents/flagging</code>, then point your directory to <code>&lt;yourname&gt;/Documents</code>. You can change directories using the <code>cd</code> command: <code>cd "path/goes/here"</code></p>
+</li>
+<li>
+<p>Run the following to download your fork and setup the connection to the upstream remote. Replace <code>YOUR_USERNAME_HERE</code> (in the first line) with your actual GitHub username.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/YOUR_USERNAME_HERE/flagging/
+<span class="nb">cd</span> flagging
+git remote add upstream https://github.com/codeforboston/flagging.git
+git fetch upstream
+</code></pre></div>
+
+<ol start="4">
+<li>In your newly created <code>flagging</code> folder, create a file called <code>.env</code> and add the vault password to it. (Replace <code>vault_password_here</code> with the actual vault password if you have it; otherwise just copy+paste and run the command as-is):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;VAULT_PASSWORD=vault_password_here&quot;</span> &gt; .env
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you do any commits to the repo, <em>please make sure <code>.env</code> is properly gitignored!!!</em> (<code>.flaskenv</code> does not need to be gitignored, only <code>.env</code>.) The vault password is sensitive information; it should not be shared with others and it should not be posted online publicly.</p>
 </div>
                 
               
