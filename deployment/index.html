@@ -8,6 +8,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Guide on developing and deploying the flagging website">
+      
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
@@ -124,6 +126,19 @@
 </div>
     
     
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/codeforboston/flagging" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codeforboston/flagging
+  </div>
+</a>
+      </div>
+    
   </nav>
 </header>
     
@@ -152,6 +167,19 @@
     CRWA Flagging Website Documentation
   </label>
   
+    <div class="md-nav__source">
+      
+<a href="https://github.com/codeforboston/flagging" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codeforboston/flagging
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
@@ -174,6 +202,18 @@
   <li class="md-nav__item">
     <a href="../about/" title="About" class="md-nav__link">
       About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../setup/" title="Setup" class="md-nav__link">
+      Setup
     </a>
   </li>
 
@@ -227,15 +267,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deploying-for-the-first-time" class="md-nav__link">
-    Deploying for the first time
+  <a href="#first-time-deployment" class="md-nav__link">
+    First Time Deployment
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#subsequent-deployments" class="md-nav__link">
-    Subsequent deployments
+    Subsequent Deployments
   </a>
   
 </li>
@@ -262,18 +302,6 @@
   <li class="md-nav__item">
     <a href="../system/" title="System" class="md-nav__link">
       System
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../database/" title="Database" class="md-nav__link">
-      Database
     </a>
   </li>
 
@@ -329,8 +357,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../development/setup/" title="Setup" class="md-nav__link">
-      Setup
+    <a href="../development/database/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development/learning_resources/" title="Learning Resources" class="md-nav__link">
+      Learning Resources
     </a>
   </li>
 
@@ -364,15 +404,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deploying-for-the-first-time" class="md-nav__link">
-    Deploying for the first time
+  <a href="#first-time-deployment" class="md-nav__link">
+    First Time Deployment
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#subsequent-deployments" class="md-nav__link">
-    Subsequent deployments
+    Subsequent Deployments
   </a>
   
 </li>
@@ -401,20 +441,16 @@
                 
                 
                 <h1 id="deployment">Deployment</h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This guide is an instruction manual on how to deploy the flagging website to internet via Heroku. If you just want to run the website locally, you do not need Heroku. Instead, check out the <a href="/development">development</a> guide.</p>
-</div>
+<details class="note" open="open"><summary>Note</summary><p>This guide is an instruction manual on how to deploy the flagging website to internet via Heroku. If you just want to run the website locally, you do not need Heroku. Instead, check out the <a href="/development">development</a> guide.</p>
+</details>
 <p>The following tools are required to deploy the website:</p>
 <ul>
 <li><a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a></li>
 <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a></li>
 </ul>
-<h2 id="deploying-for-the-first-time">Deploying for the first time</h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In this section, the project name is assumed to be <code>crwa-flagging</code>. If you are deploying to another URL, such as <code>crwa-flagging-staging</code> or another personal domain, then replace each reference to <code>crwa-flagging</code> with that.</p>
-</div>
+<h2 id="first-time-deployment">First Time Deployment</h2>
+<details class="note" open="open"><summary>Note</summary><p>In this section, the project name is assumed to be <code>crwa-flagging</code>. If you are deploying to another URL, such as <code>crwa-flagging-staging</code> or another personal domain, then replace each reference to <code>crwa-flagging</code> with that.</p>
+</details>
 <p>If you've never deployed the app from your computer, follow these instructions.</p>
 <ol>
 <li>If you have not already done so, pull the repository to your computer, and then change your directory to it:</li>
@@ -474,27 +510,29 @@ heroku git:remote -a crwa-flagging
 <div class="highlight"><pre><span></span><code>2020-06-13T23:17:54.000000+00:00 app[api]: Build succeeded
 </code></pre></div>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you see instead see something like <code>[...] State changed from starting to crashed</code>, then read the rest of the output to see what happened. The most common error when deploying to production will be a <code>RuntimeError: Unable to load the vault; bad password provided</code> which is self-explanatory. Update the password, and the website will automatically attempt to redeploy. If you don't see that error, then try to self-diagnose.</p>
-</div>
+<details class="note" open="open"><summary>Note</summary><p>If you see instead see something like <code>[...] State changed from starting to crashed</code>, then read the rest of the output to see what happened. The most common error when deploying to production will be a <code>RuntimeError: Unable to load the vault; bad password provided</code> which is self-explanatory. Update the password, and the website will automatically attempt to redeploy. If you don't see that error, then try to self-diagnose.</p>
+</details>
 <ol start="7">
 <li>Go see the website for yourself!</li>
 </ol>
-<h2 id="subsequent-deployments">Subsequent deployments</h2>
+<h2 id="subsequent-deployments">Subsequent Deployments</h2>
 <ol>
 <li>Heroku doesn't allow you to redeploy the website unless you create a new commit. Add some updates if you need to with <code>git add .</code> then <code>git commit -m "describe your changes here"</code>.</li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In the <em>very</em> rare case you simply need to redeploy without making any changes to the site, in lieu of the above, simply do <code>git commit --allow-empty -m "redeploy"</code>.</p>
-</div>
+<details class="note" open="open"><summary>Note</summary><p>In the <em>very</em> rare case you simply need to redeploy without making any changes to the site, in lieu of the above, simply do <code>git commit --allow-empty -m "redeploy"</code>.</p>
+</details>
 <ol start="2">
 <li>Once you have done that, Heroku will redeploy the site when you merge your working branch:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>git push heroku master
 </code></pre></div>
 
+<details class="tip" open="open"><summary>Tip</summary><p>If you are having any issues here related to merge conflicts, instead of deleting everything and starting over, try to pull the data from the <code>heroku</code> branch in and merge it into your local branch.</p>
+<div class="highlight"><pre><span></span><code>git fetch heroku
+git pull heroku master
+</code></pre></div>
+
+</details>
 <h2 id="staging-and-production-split">Staging and Production Split</h2>
 <p>It is recommended, though not required, that you have both "staging" and "production" environments for the website (see <a href="https://en.wikipedia.org/wiki/Deployment_environment#Staging">here</a> for an explanation), and furthermore it is recommended you deploy to staging and play around with the website to see if it looks right before you ever deploy to production.</p>
 <p>Managing effectively two separate Heroku apps from a single repository requires a bit of knowledge about how git works. Basically what you're doing is connecting to two separate remote git repositories. The default remote repo is called <code>heroku</code> and it was created by Heroku's CLI. But since you now have two Heroku remote repositories, the Heroku CLI doesn't know what it's supposed to name the 2nd one. So you have to manually name it using git.</p>
@@ -511,9 +549,7 @@ heroku git:remote -a crwa-flagging
 git remote -v
 </code></pre></div>
 
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The above command should output something like this:</p>
+<details class="success" open="open"><summary>Success</summary><p>The above command should output something like this:</p>
 <div class="highlight"><pre><span></span><code>heroku  https://git.heroku.com/crwa-flagging.git <span class="o">(</span>fetch<span class="o">)</span>
 heroku  https://git.heroku.com/crwa-flagging.git <span class="o">(</span>push<span class="o">)</span>
 origin  https://github.com/&lt;your_github_username_here&gt;/flagging.git <span class="o">(</span>fetch<span class="o">)</span>
@@ -524,7 +560,7 @@ upstream        https://github.com/codeforboston/flagging.git <span class="o">(<
 upstream        https://github.com/codeforboston/flagging.git <span class="o">(</span>push<span class="o">)</span>
 </code></pre></div>
 
-</div>
+</details>
 <ol start="3">
 <li>Now all of your <code>heroku</code> commands are going to require specifying the app, but the steps to deploy in staging are otherwise similar to the production deployment:</li>
 </ol>

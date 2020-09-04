@@ -8,6 +8,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Guide on developing and deploying the flagging website">
+      
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
@@ -124,6 +126,19 @@
 </div>
     
     
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/codeforboston/flagging" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codeforboston/flagging
+  </div>
+</a>
+      </div>
+    
   </nav>
 </header>
     
@@ -152,6 +167,19 @@
     CRWA Flagging Website Documentation
   </label>
   
+    <div class="md-nav__source">
+      
+<a href="https://github.com/codeforboston/flagging" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codeforboston/flagging
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
@@ -174,6 +202,18 @@
   <li class="md-nav__item">
     <a href="../../about/" title="About" class="md-nav__link">
       About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/" title="Setup" class="md-nav__link">
+      Setup
     </a>
   </li>
 
@@ -210,18 +250,6 @@
   <li class="md-nav__item">
     <a href="../../system/" title="System" class="md-nav__link">
       System
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../database/" title="Database" class="md-nav__link">
-      Database
     </a>
   </li>
 
@@ -314,6 +342,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#why-pandas" class="md-nav__link">
+    Why Pandas?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -327,8 +362,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../setup/" title="Setup" class="md-nav__link">
-      Setup
+    <a href="../database/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../learning_resources/" title="Learning Resources" class="md-nav__link">
+      Learning Resources
     </a>
   </li>
 
@@ -380,6 +427,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#why-pandas" class="md-nav__link">
+    Why Pandas?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -418,10 +472,12 @@
 <li>Heroku integrates much more nicely into Flask's extensive use of CLIs. For example, Heroku's task scheduler tool (which is very easy to set up) can simply run a command line script built in Flask. Google App Engine lets you do a simple cron job setup that <a href="https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml">sends GET requests to your app</a>, but doing something that doesn't publicly expose the interface requires use of <a href="https://cloud.google.com/python/getting-started/background-processing">three additional services</a>: Pub/Sub, Firestore, and Cloud Scheduler.</li>
 <li>We want to publicly host this website, but we don't want to expose the keys we use for various things. This is a bit easier to do with Heroku, as it has the concept of an environment that lives on the instance's memory and can be set through the CLI. Google App Engine lets you configure the environment <a href="https://cloud.google.com/appengine/docs/flexible/python/reference/app-yaml">only</a> through <code>app.yaml</code>, which is an issue because it means we'd need to gitignore the <code>app.yaml</code>. (We want to just gitignore the keys, not the whole cloud deployment config!)</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you ever want to run this website on Google App Engine, you'll have to make some changes to the repository (such as adding an <code>app.yaml</code>) and may also involve making changes to the code-- mainly the data backend and the task scheduler interface.</p>
-</div>
+<details class="warning" open="open"><summary>Warning</summary><p>If you ever want to run this website on Google App Engine, you'll have to make some changes to the repository (such as adding an <code>app.yaml</code>), and it may also involve making changes to the code-- mainly the data backend and the task scheduler interface.</p>
+</details>
+<h2 id="why-pandas">Why Pandas?</h2>
+<p>We made the decision to use Pandas to manipulate data in the backend of the website because it has an interface that should feel familiar to users of Stata, R, or other statistical software packages commonly used by scientists and academics. This ultimately helps with the maintainability of the website for its intended audience. Data manipulation in SQL can sometimes be unintuitive and require advanced trickery (CTEs, window functions) compared to Pandas code that achieves the same results.</p>
+<p>It's true that Pandas is not as efficient as SQL, but we're not processing millions of rows of data, we're only processing a few hundred rows at a time and at infrequent intervals. (And even if efficiency was a concern, we'd sooner use something like <a href="https://dask.org/">Dask</a> than SQL.)</p>
+<p>We do use SQL in this website, but primarily to store and retrieve data and to access some features that integrate nicely with the SQLAlchemy ORM (notably the Flask-Admin extension).</p>
                 
               
               
@@ -455,13 +511,13 @@
           </a>
         
         
-          <a href="../setup/" title="Setup" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../database/" title="Database" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Setup
+                Database
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

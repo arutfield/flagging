@@ -8,6 +8,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Guide on developing and deploying the flagging website">
+      
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
@@ -15,7 +17,7 @@
     
     
       
-        <title>Database - CRWA Flagging Website Documentation</title>
+        <title>Setup - CRWA Flagging Website Documentation</title>
       
     
     
@@ -58,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#database-project-in-depth-guide" class="md-skip">
+        <a href="#setup" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Database
+              Setup
             
           </span>
         </div>
@@ -124,6 +126,19 @@
 </div>
     
     
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/codeforboston/flagging" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codeforboston/flagging
+  </div>
+</a>
+      </div>
+    
   </nav>
 </header>
     
@@ -152,6 +167,19 @@
     CRWA Flagging Website Documentation
   </label>
   
+    <div class="md-nav__source">
+      
+<a href="https://github.com/codeforboston/flagging" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codeforboston/flagging
+  </div>
+</a>
+    </div>
+  
   <ul class="md-nav__list" data-md-scrollfix>
     
       
@@ -175,6 +203,83 @@
     <a href="../about/" title="About" class="md-nav__link">
       About
     </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Setup
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Setup" class="md-nav__link md-nav__link--active">
+      Setup
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgres-installation" class="md-nav__link">
+    Postgres installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-and-setup-the-code-base" class="md-nav__link">
+    Download and Setup the Code Base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-website-locally" class="md-nav__link">
+    Run the Website Locally
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -211,27 +316,6 @@
     <a href="../system/" title="System" class="md-nav__link">
       System
     </a>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Database" class="md-nav__link md-nav__link--active">
-      Database
-    </a>
-    
   </li>
 
     
@@ -286,8 +370,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../development/setup/" title="Setup" class="md-nav__link">
-      Setup
+    <a href="../development/database/" title="Database" class="md-nav__link">
+      Database
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development/learning_resources/" title="Learning Resources" class="md-nav__link">
+      Learning Resources
     </a>
   </li>
 
@@ -314,6 +410,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgres-installation" class="md-nav__link">
+    Postgres installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-and-setup-the-code-base" class="md-nav__link">
+    Download and Setup the Code Base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-the-website-locally" class="md-nav__link">
+    Run the Website Locally
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -328,39 +466,163 @@
                   
                 
                 
-                <h1 id="database-project-in-depth-guide">Database Project In-depth Guide</h1>
-<p>We will be using PostgreSQL, a free, open-source database management system successor to UC Berkeley's Ingres Database but also support SQL language</p>
-<p><strong>On OSX or Linux:</strong></p>
-<p>We need to setup postgres database first thus enter into the bash terminals:</p>
-<p><div class="highlight"><pre><span></span><code>brew install postgresql
-brew services start postgresql
+                <h1 id="setup">Setup</h1>
+<p>This is a guide on how to do your first-time setup for running the website locally and getting ready to make changes to the code base. You should follow this guide before doing anything else!</p>
+<p>The Flagging Website documentation assumes you followed all the instructions in this page exactly, so pay close attention.</p>
+<p>This guide assumes you're a complete beginner at Python, Git, Postgres, etc. so don't be intimidated if you don't know what all of these things are. The main thing this guide assumes is that you know how to open up a terminal in your respective operating system (command prompt or "CMD" in Windows, and bash in OSX).</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Install all of the following programs onto your computer:</p>
+<p><strong>Required:</strong></p>
+<ul>
+<li><a href="https://www.python.org/downloads/">Python 3</a> - specifically 3.7 or higher</li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a> (first time setup guide <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">here</a>)</li>
+<li><a href="https://www.postgresql.org/">Postgres</a> <em>(see installation instructions below)</em></li>
+<li><em>(OSX only)</em> <a href="https://brew.sh/">Homebrew</a></li>
+</ul>
+<p><strong>Recommended:</strong></p>
+<ul>
+<li>A good text editor or IDE, such as <a href="https://atom.io/">Atom.io</a> (which is lightweight and beginner friendly) or <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> (which is powerful but bulky and geared toward advanced users).</li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Heroku CLI</a> <em>(required for remote deployment to Heroku.)</em></li>
+</ul>
+<p><strong>Other:</strong></p>
+<ul>
+<li>It is strongly recommend that you create a <a href="https://github.com/">GitHub account</a> if you haven't done so already. The GitHub account should have the same email as the one registered to your <code>git config --global user.email</code> that you set in the first time git setup.</li>
+</ul>
+<details class="warning" open="open"><summary>Warning</summary><p><em>(Windows users only)</em> At least two Windows users have had problems getting Python working in Windows for the first time. Check out some people troubleshooting various Python installation related issues <a href="https://stackoverflow.com/questions/13596505/python-not-working-in-command-prompt">on StackOverflow</a>. Also note that the command to run Python in Windows may be <code>python</code>, <code>python3</code>, <code>py</code>, or <code>py3</code>. Figure out which one works for you.</p>
+</details>
+<h3 id="postgres-installation">Postgres installation</h3>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows (CMD)</label><div class="tabbed-content">
+<ol>
+<li>
+<p>Download <a href="https://www.postgresql.org/download/windows/">here</a> and install via the executable.</p>
+</li>
+<li>
+<p>(If you had any terminals open, close out and reopen after Postgres installation.)</p>
+</li>
+<li>
+<p>Open command prompt and try the following (case-sensitive): <code>psql -V</code> If it returns the version number then you're set.</p>
+</li>
+<li>
+<p>If you get an error about the command not being recognized, then it might mean you need to manually add Postgres's bin to your PATH (<a href="https://stackoverflow.com/a/11567231">see here</a>).</p>
+</li>
+</ol>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OSX (Bash)</label><div class="tabbed-content">
+<ol>
+<li>
+<p>If you do not have Homebrew installed, install it from <a href="https://brew.sh/">here</a>.</p>
+</li>
+<li>
+<p>Via a bash terminal: <code>brew install postgres</code></p>
+</li>
+<li>
+<p>Test that it works by running (case-sensitive): <code>psql -V</code>. If it returns the version number then you're set.</p>
+</li>
+</ol>
+</div>
+</div>
+<details class="tip" open="open"><summary>Tip</summary><p>Chances are you are not going to need Postgres to run in the background constantly, so you should learn how to turn it off and back on.</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Windows (CMD)</label><div class="tabbed-content">
+<p><strong>Turn Postgres on/off:</strong></p>
+<ol>
+<li>
+<p>Go to the Start menu and open up "Run..."</p>
+</li>
+<li>
+<p><code>services.msc</code> -&gt; <span class="keys"><kbd class="key-enter">Enter</kbd></span>. This opens the Services panel.</p>
+</li>
+<li>
+<p>Look for the name <em>postgresql</em> and start/stop Postgres.</p>
+</li>
+</ol>
+<p><strong>Keep Postgres from running at startup:</strong></p>
+<p>(Via the Services panel) As long as the service is "manual" and not automatic, it will not load at startup.</p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">OSX (Bash)</label><div class="tabbed-content">
+<p><strong>Turn Postgres on:</strong></p>
+<div class="highlight"><pre><span></span><code>pg_ctl -D /usr/local/var/postgres start
 </code></pre></div>
-Explanation: We will need to install postgresql in order to create our database. With postgresql installed, we can start up database locally or in our computer. We use <code>brew</code> from homebrew to install and start postgresql services. To get homebrew, consult with this link: https://brew.sh/</p>
-<p>To  begin initialize a database, enter into the bash terminal: </p>
-<p>```shell script
-export POSTGRES_PASSWORD=<em>enter_password_here</em>
-createdb -U <em>enter_username_here</em> flagging
-psql -U <em>enter_username_here</em> -d flagging -c "DROP USER IF EXISTS flagging; CREATE USER flagging SUPERUSER PASSWORD '${POSTGRES_PASSWORD}'"
-<div class="highlight"><pre><span></span><code>Explanation: Postgres password can be any password you choose. We exported your chosen postgres password into `POSTGRES_PASSWORD`, an environment variable, which is a variable set outside a program and is independent in each session. Next, we created a database called `flagging` using a username/rolename, which needs to be a Superuser or having all accesses of postgres. By default, the Superuser rolename can be `postgres` or the username for you OS. To find out, you can go into psql terminal, which we will explain below, and enter `\du` to see all usernames. Finally, we add the database `flagging` using the env variable in which we save our password. 
 
-You can see the results using the postgresql terminal which you can open by entering:
+<p><strong>Turn Postgres off:</strong></p>
+<div class="highlight"><pre><span></span><code>pg_ctl -D /usr/local/var/postgres stop
 </code></pre></div>
-psql
-<div class="highlight"><pre><span></span><code>Below are a couple of helpful commands you can use in the postgresql:
-</code></pre></div>
-\q --to quit
-\c <em>database_name</em> --to connect to database
-\d --show what tables in current database
-\du --show database users
-\dt --show tables of current database
-<div class="highlight"><pre><span></span><code>To run the website, in the project directory `flagging` enter:
 
-```shell script
-sh run_unix_dev.sh
-</code></pre></div></p>
-<p>Running the bash script <code>run_unix_dev.sh</code> found in the <code>flagging</code> folder. Inside the scirpt, it defines environment variables <code>FLASK_APP</code> and <code>FLASK_ENV</code> which we need to find app.py. We also export the user input for offline mode, vault password, and postgres password for validation. Finally we initialize a database with a custom flask command <code>flask init-db</code> and finally run the flask application <code>flask run</code>.</p>
-<p>Regarding in how flask application connects to postgresql, <code>database.py</code> creates an object  <code>db = SQLAlchemy()</code> which we will refer again in <code>app.py</code> to configure the flask application to support postgressql <code>from .data import db</code> <code>db.init_app(app)</code>. (We can import the <code>db</code> object beecause <code>__init__.py</code> make the object available as a global variable) </p>
-<p>Flask supports creating custom commands <code>init-db</code> for initializing database and <code>update-db</code> for updating database. <code>init-db</code> command calls <code>init_db</code> function from <code>database.py</code> and essentially calls <code>execute_sql()</code> which executes the sql file <code>schema.sql</code> that creates all the tables. Then calls <code>update_database()</code> which fills the database with data from usgs, hobolink, etc. <code>update-db</code> command primarily just udpates the table thus does not create new tables. Note: currently we are creating and deleting the database everytime the bashscript and program runs. </p>
+<p><strong>Keep Postgres from running at startup:</strong></p>
+<p>Some solutions <a href="https://superuser.com/questions/244589/prevent-postgresql-from-running-at-startup">here</a>.</p>
+</div>
+</div>
+</details>
+<h2 id="download-and-setup-the-code-base">Download and Setup the Code Base</h2>
+<p>The flagging website is open source; the whole website's source code is available on GitHub. This section of the setup guide shows you the preferred way to install it and set up the code on a local computer.</p>
+<ol>
+<li>Fork the <a href="https://github.com/codeforboston/flagging/">main GitHub repo</a> to your personal GitHub account. You can do that by going to the Code For Boston flagging repo and clicking on this button:</li>
+</ol>
+<p><img alt="" src="../img/github_fork.png" /></p>
+<ol start="2">
+<li>
+<p>Point your terminal (Bash on OSX, command prompt on Windows) to the directory you want to put the <code>/flagging</code> project folder inside of. E.g. if you want the project folder to be located at <code>&lt;yourname&gt;/Documents/flagging</code>, then point your directory to <code>&lt;yourname&gt;/Documents</code>. You can change directories using the <code>cd</code> command: <code>cd "path/goes/here"</code></p>
+</li>
+<li>
+<p>Run the following to download your fork and setup the connection to the upstream remote. Replace <code>YOUR_USERNAME_HERE</code> (in the first line) with your actual GitHub username.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/YOUR_USERNAME_HERE/flagging/
+<span class="nb">cd</span> flagging
+git remote add upstream https://github.com/codeforboston/flagging.git
+git fetch upstream
+</code></pre></div>
+
+<ol start="4">
+<li>In your newly created <code>flagging</code> folder, create a file called <code>.env</code> and add the vault password to it. (Replace <code>vault_password_here</code> with the actual vault password if you have it; otherwise just copy+paste and run the command as-is):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;VAULT_PASSWORD=vault_password_here&quot;</span> &gt; .env
+</code></pre></div>
+
+<details class="danger" open="open"><summary>Danger</summary><p>If you do any commits to the repo, <em>please make sure <code>.env</code> is properly gitignored!</em> (<code>.flaskenv</code> does not need to be gitignored, only <code>.env</code>.) The vault password is sensitive information; it should not be shared with others and it should not be posted online publicly.</p>
+</details>
+<h2 id="run-the-website-locally">Run the Website Locally</h2>
+<details class="note" open="open"><summary>Note</summary><p>From here on in the documentation, each terminal command assumes your terminal's working directory is pointed toward the <code>flagging</code> directory.</p>
+</details>
+<p>After you get everything set up, you should run the website at least once. Te process of running the website installs the remaining dependencies, and sets up a virtual environment to work in.</p>
+<ol>
+<li>Run the following:</li>
+</ol>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Windows (CMD)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>run_windows_dev
+</code></pre></div>
+
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">OSX (Bash)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>sh run_unix_dev.sh
+</code></pre></div>
+
+</div>
+</div>
+<details class="note" open="open"><summary>Note</summary><p>The script being run is doing the following, in order:</p>
+<ol>
+<li>Set up a "virtual environment" (basically an isolated folder inside your project directory that we install the Python packages into),</li>
+<li>install the packages inside of <code>requirements.txt</code>; this can take a while during your first time.</li>
+<li>Set up some environment variables that Flask needs.</li>
+<li>Prompts the user to set some options for the deployment. (See step 2 below.)</li>
+<li>Set up the Postgres database and update it with data.</li>
+<li>Run the actual website.</li>
+</ol>
+</details>
+<ol start="2">
+<li>For the first prompt, type <code>y</code> to run the website in offline mode. For the subsequent two prompts, <span class="keys"><kbd class="key-enter">Enter</kbd></span> through them without inputting anything.</li>
+</ol>
+<details class="success" open="open"><summary>Success</summary><p>You should be good if you eventually see something like the following in your terminal:</p>
+<div class="highlight"><pre><span></span><code> * Serving Flask app &quot;flagging_site:create_app&quot; (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+</code></pre></div>
+
+</details>
+<ol start="3">
+<li>Point your browser of choice to the URL shown in the terminal output. If everything worked out, the website should be running on your local computer!</li>
+</ol>
                 
               
               
@@ -379,7 +641,7 @@ sh run_unix_dev.sh
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../system/" title="System" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../about/" title="About" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -388,19 +650,19 @@ sh run_unix_dev.sh
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                System
+                About
               </div>
             </div>
           </a>
         
         
-          <a href="../shell/" title="Shell" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../admin/" title="Admin" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Shell
+                Admin
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
