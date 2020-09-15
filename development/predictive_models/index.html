@@ -276,13 +276,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Development
+      Development Background
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Development" data-md-level="1">
+    <nav class="md-nav" aria-label="Development Background" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon"></span>
-        Development
+        Development Background
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -305,8 +305,48 @@
 
 
   <li class="md-nav__item">
-    <a href="../database/" title="Database" class="md-nav__link">
-      Database
+    <a href="../learning_resources/" title="Learning Resources" class="md-nav__link">
+      Learning Resources
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+    
+    <label class="md-nav__link" for="nav-9">
+      Development
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data/" title="Data" class="md-nav__link">
+      Data
     </a>
   </li>
 
@@ -315,11 +355,90 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../learning_resources/" title="Learning Resources" class="md-nav__link">
-      Learning Resources
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Predictive Models
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Predictive Models" class="md-nav__link md-nav__link--active">
+      Predictive Models
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-transformations" class="md-nav__link">
+    Data Transformations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-overviews" class="md-nav__link">
+    Model Overviews
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-the-models" class="md-nav__link">
+    Editing the Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Editing the Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-coefficients" class="md-nav__link">
+    Model coefficients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety-threshold" class="md-nav__link">
+    Safety threshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-transformations" class="md-nav__link">
+    Feature transformations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -352,6 +471,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#data-transformations" class="md-nav__link">
+    Data Transformations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#model-overviews" class="md-nav__link">
     Model Overviews
   </a>
@@ -362,6 +488,33 @@
   <a href="#editing-the-models" class="md-nav__link">
     Editing the Models
   </a>
+  
+    <nav class="md-nav" aria-label="Editing the Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-coefficients" class="md-nav__link">
+    Model coefficients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety-threshold" class="md-nav__link">
+    Safety threshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-transformations" class="md-nav__link">
+    Feature transformations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -382,7 +535,37 @@
                 
                 
                 <h1 id="predictive-models">Predictive Models</h1>
-<p>The predictive models are stored in the file <code>/flagging_site/data/models.py</code>. These models are run as part of the <code>update-db</code> command, and then the outputs are stored in the SQL table named <code>model_outputs</code>.</p>
+<p>The Flagging Website is basically just a deployed predictive model, so in a sense this document covers the real core of the code base. This page explains the models and the data transformations that occur from the original data. At the bottom, there are some notes on how to change the model coefficients and rerun the website with new coefficients.</p>
+<p>The predictive models are stored in the file <code>/flagging_site/data/models.py</code>. These models are run as part of the <code>update-db</code> command. The input for the models are a combination of the HOBOlink and USGS data with some transformations of the data. The outputs are stored in the SQL table named <code>model_outputs</code>.</p>
+<details class="tip" open="open"><summary>Tip</summary><p>There is a fair bit of Pandas in this document and it may be intimidating. However, if you only want to change the model's coefficients and nothing more, you won't need to touch the Pandas directly.</p>
+</details>
+<h2 id="data-transformations">Data Transformations</h2>
+<p>The model combines data from the HOBOlink device and USGS. These two data sources are run through the function <code>process_data()</code>, in which the data is aggregated to hourly intervals (USGS is every 15 minutes and HOBOlink is every 10 minutes).</p>
+<p>Once the data sources are aligned, additional feature transformations are performed such as rolling averages, rolling sums, and a measure of when the last significant rainfall was.</p>
+<p>The feature transformations the CRWA uses depends on the year of the model, so by the time you may be reading this, this information may be outdated. Previous versions included rolling average wind speeds and air/water temperatures over 24 hours. The current version of the model (as of 2020) calculates the following:</p>
+<ul>
+<li>Rolling 24 hours of the PAR (photosynthetically active radiation) and the stream flow (cubic feet per second).</li>
+<li>Rolling sum of rainfall over the following intervals: 0-24h, 0-48h, and 24-48h.</li>
+<li>The numbers of days since the last "significant rainfall," where significant rain is defined as when the rolling sum of the last 24 hours of rainfall is at least 0.20 inches.</li>
+</ul>
+<details class="tip" open="open"><summary>Tip</summary><p>If you look at the code, you'll see a lot of stuff like <code class="highlight"><span class="n">rolling</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span></code>. The reason <code>rolling</code> works is because the dataframe is sorted already by timestamp at that point by <code class="highlight"><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span></code>.</p>
+</details>
+<details class="note" open="open"><summary>Note</summary><p>We use 28 days of HOBOlink data to process the model. For most features, we only need the last 48 hours worth of data to calculate the most recent value, however the last significant rainfall feature requires a lot of historic data because it is not technically bounded or transformed otherwise. This means that even when calculating 1 row of output data, i.e. the latest hour of data, we still need 28 days.</p>
+<p>In the deployed model, if we do not see any significant rainfall in the last 28 days, we return the difference between the timestamp and the earliest time in the dataframe, <code class="highlight"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span></code>. In this scenario, the data will no longer be temporally consistent: a calculation right now will have <code>28.0</code> for <code>'days_since_sig_rain'</code>, but 12 hours from now it will be 27.5. This is fine though because the model will basically never predict E. coli blooms with 28+ days since significant rain, even when the data is not censored.</p>
+<p>Unfortunately there's no pretty way to implement <code>days_since_sig_rain</code>, so the Pandas code that does all of this is one of the more inscrutable parts of the codebase. Note that <code>'last_sig_rain'</code> is calculating the timestamp of the last significant rain, and <code>'days_since_sig_rain'</code> calculates the time delta and translates into days:</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sig_rain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rain_0_to_24h_sum&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">SIGNIFICANT_RAIN</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;last_sig_rain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sig_rain&#39;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;days_since_sig_rain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;last_sig_rain&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">seconds</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">24</span>
+<span class="p">)</span>
+</code></pre></div>
+
+</details>
 <h2 id="model-overviews">Model Overviews</h2>
 <p>Each model function defined in <code>models.py</code> is formatted like this:</p>
 <ol>
@@ -392,7 +575,7 @@
 <li>We check whether the function is above or below the target threshold for safety, defined by <code>SAFETY_THRESHOLD</code>.</li>
 <li>Lastly, we return a dataframe with 5 columns of data: <code>'reach'</code>, <code>'time'</code>, <code>'log_odds'</code> (step 2), <code>'probability'</code> (step 3), and <code>'safe'</code> (step 4). Each row in output corresponds to a row of input data.</li>
 </ol>
-<p>Here is an example function:</p>
+<p>Here is an example function. It should be pretty easy to track the steps outlined above with the code below.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">reach_3_model</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">48</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    a- rainfall sum 0-24 hrs</span>
@@ -407,7 +590,6 @@
 <span class="sd">    Returns:</span>
 <span class="sd">        Outputs for model as a dataframe.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">rows</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;log_odds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
@@ -416,13 +598,48 @@
         <span class="o">+</span> <span class="mf">0.1681</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rain_24_to_48h_sum&#39;</span><span class="p">]</span>
         <span class="o">-</span> <span class="mf">0.02855</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;days_since_sig_rain&#39;</span><span class="p">]</span>
     <span class="p">)</span>
+
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;probability&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;log_odds&#39;</span><span class="p">])</span>
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;safe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;probability&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">SAFETY_THRESHOLD</span>
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;reach&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+
     <span class="k">return</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;reach&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;log_odds&#39;</span><span class="p">,</span> <span class="s1">&#39;probability&#39;</span><span class="p">,</span> <span class="s1">&#39;safe&#39;</span><span class="p">]]</span>
 </code></pre></div>
 
 <h2 id="editing-the-models">Editing the Models</h2>
+<details class="note" open="open"><summary>Note</summary><p>This section covers making changes to the following:</p>
+<ul>
+<li>The coefficients for the models.</li>
+<li>The safety threshold.</li>
+<li>The model features.</li>
+</ul>
+<p>If you want to do anything more complicated, such as adding a new source of information to the model, that is outside the scope of this document. To accomplish that, you'll need to do more sleuthing into the code to really understand it.</p>
+</details>
+<details class="note" open="open"><summary>Note</summary><p>Making any changes covered in this section is relatively easy, but you'll still need to actually deploy the changes to Heroku if you want them to be on the live site. Read the <a href="../../deployment">deployment guide</a> for more.</p>
+</details>
+<h3 id="model-coefficients">Model coefficients</h3>
+<p>As covered in the last section, each model's coefficients are represented as log odds ratios. Don't be confused by this statement though: this is how logistic regression is represented in all statistical software packages-- <code>Logit</code> in Python's Statsmodels, <code>logit</code> in Stata, and <code>glm</code> in R-- since that's what's being calculated mathematically when a logistic regression is calculated. I only emphasize this to point out that to get a probability, the final log odds needs to be logistically transformed (which is done via the <code>sigmoid()</code> function) after the linear terms are summed up.</p>
+<p>The code representing the logistic model prediction was organized for maximum legibility: the first number is the constant term, and the remaining coefficients are aligned next to the column name. Note the final coefficient in this particular example is a negative coefficient and is thus subtracted.</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;log_odds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="mf">0.5157</span>
+    <span class="o">+</span> <span class="mf">0.267</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rain_0_to_24h_sum&#39;</span><span class="p">]</span>
+    <span class="o">+</span> <span class="mf">0.1681</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rain_24_to_48h_sum&#39;</span><span class="p">]</span>
+    <span class="o">-</span> <span class="mf">0.02855</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;days_since_sig_rain&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Changing the coefficients is as simple as just changing one of those numbers next to its respective column name, inside of its respective model for any particular reach.</p>
+<h3 id="safety-threshold">Safety threshold</h3>
+<p>The safety threshold is defined near the top of the document:</p>
+<div class="highlight"><pre><span></span><code><span class="n">SAFETY_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.65</span>
+</code></pre></div>
+
+<p>This represents a 65% threshold for whether or not we consider the water safe or not. The <code>SAFETY_THRESHOLD</code> value is just used as a placeholder/convenience for whatever the default threshold should be. You can always change this value to be lower or higher, and additionally you can replace <code>SAFETY_THRESHOLD</code> inside of a model function</p>
+<details class="warning" open="open"><summary>Warning</summary><p>Hopefully this goes without saying, but if you are going to change the threshold, please have a good, scientifically and statistically justifiable reason for doing so!</p>
+</details>
+<h3 id="feature-transformations">Feature transformations</h3>
+<p>Feature transformations occur in the <code>process_data()</code> function after the data has been aggregated by hour, merged, and sorted by timestamp.</p>
+<p>If you want to add some feature transformations, my suggestion is you try to learn from existing examples and copy+paste with the necessary replacements. If you have a feature that can't be built from a copy+paste, that's where you'll possibly need to learn a bit of Pandas.</p>
                 
               
               
@@ -437,6 +654,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../data/" title="Data" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Data
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

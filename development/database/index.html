@@ -59,11 +59,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#database-project-in-depth-guide" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -270,21 +265,19 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Development
+      Development Background
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Development" data-md-level="1">
+    <nav class="md-nav" aria-label="Development Background" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon"></span>
-        Development
+        Development Background
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -305,20 +298,49 @@
           
           
 
-  
 
+  <li class="md-nav__item">
+    <a href="../learning_resources/" title="Learning Resources" class="md-nav__link">
+      Learning Resources
+    </a>
+  </li>
 
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+        
+      </ul>
+    </nav>
+  </li>
+
     
       
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
     
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <a href="./" title="Database" class="md-nav__link md-nav__link--active">
-      Database
+    <label class="md-nav__link" for="nav-9">
+      Development
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../data/" title="Data" class="md-nav__link">
+      Data
     </a>
-    
   </li>
 
         
@@ -328,8 +350,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../learning_resources/" title="Learning Resources" class="md-nav__link">
-      Learning Resources
+    <a href="../predictive_models/" title="Predictive Models" class="md-nav__link">
+      Predictive Models
     </a>
   </li>
 
@@ -346,21 +368,6 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -370,39 +377,9 @@
                   
                 
                 
-                <h1 id="database-project-in-depth-guide">Database Project In-depth Guide</h1>
-<p>We will be using PostgreSQL, a free, open-source database management system successor to UC Berkeley's Ingres Database but also support SQL language</p>
-<p><strong>On OSX or Linux:</strong></p>
-<p>We need to setup postgres database first thus enter into the bash terminals:</p>
-<p><div class="highlight"><pre><span></span><code>brew install postgresql
-brew services start postgresql
-</code></pre></div>
-Explanation: We will need to install postgresql in order to create our database. With postgresql installed, we can start up database locally or in our computer. We use <code>brew</code> from homebrew to install and start postgresql services. To get homebrew, consult with this link: <a href="https://brew.sh/">https://brew.sh/</a></p>
-<p>To  begin initialize a database, enter into the bash terminal: </p>
-<p>```shell script
-export POSTGRES_PASSWORD=<em>enter_password_here</em>
-createdb -U <em>enter_username_here</em> flagging
-psql -U <em>enter_username_here</em> -d flagging -c "DROP USER IF EXISTS flagging; CREATE USER flagging SUPERUSER PASSWORD '${POSTGRES_PASSWORD}'"
-<div class="highlight"><pre><span></span><code>Explanation: Postgres password can be any password you choose. We exported your chosen postgres password into `POSTGRES_PASSWORD`, an environment variable, which is a variable set outside a program and is independent in each session. Next, we created a database called `flagging` using a username/rolename, which needs to be a Superuser or having all accesses of postgres. By default, the Superuser rolename can be `postgres` or the username for you OS. To find out, you can go into psql terminal, which we will explain below, and enter `\du` to see all usernames. Finally, we add the database `flagging` using the env variable in which we save our password. 
-
-You can see the results using the postgresql terminal which you can open by entering:
-</code></pre></div>
-psql
-<div class="highlight"><pre><span></span><code>Below are a couple of helpful commands you can use in the postgresql:
-</code></pre></div>
-\q --to quit
-\c <em>database_name</em> --to connect to database
-\d --show what tables in current database
-\du --show database users
-\dt --show tables of current database
-<div class="highlight"><pre><span></span><code>To run the website, in the project directory `flagging` enter:
-
-```shell script
-sh run_unix_dev.sh
-</code></pre></div></p>
-<p>Running the bash script <code>run_unix_dev.sh</code> found in the <code>flagging</code> folder. Inside the scirpt, it defines environment variables <code>FLASK_APP</code> and <code>FLASK_ENV</code> which we need to find app.py. We also export the user input for offline mode, vault password, and postgres password for validation. Finally we initialize a database with a custom flask command <code>flask init-db</code> and finally run the flask application <code>flask run</code>.</p>
-<p>Regarding in how flask application connects to postgresql, <code>database.py</code> creates an object  <code>db = SQLAlchemy()</code> which we will refer again in <code>app.py</code> to configure the flask application to support postgressql <code>from .data import db</code> <code>db.init_app(app)</code>. (We can import the <code>db</code> object beecause <code>__init__.py</code> make the object available as a global variable) </p>
-<p>Flask supports creating custom commands <code>init-db</code> for initializing database and <code>update-db</code> for updating database. <code>init-db</code> command calls <code>init_db</code> function from <code>database.py</code> and essentially calls <code>execute_sql()</code> which executes the sql file <code>schema.sql</code> that creates all the tables. Then calls <code>update_database()</code> which fills the database with data from usgs, hobolink, etc. <code>update-db</code> command primarily just udpates the table thus does not create new tables. Note: currently we are creating and deleting the database everytime the bashscript and program runs. </p>
+                  <h1>Database</h1>
+                
+                
                 
               
               
@@ -417,41 +394,6 @@ sh run_unix_dev.sh
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../history/" title="History" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                History
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../learning_resources/" title="Learning Resources" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Learning Resources
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

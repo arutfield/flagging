@@ -328,13 +328,13 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Development
+      Development Background
       <span class="md-nav__icon md-icon"></span>
     </label>
-    <nav class="md-nav" aria-label="Development" data-md-level="1">
+    <nav class="md-nav" aria-label="Development Background" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
         <span class="md-nav__icon md-icon"></span>
-        Development
+        Development Background
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -357,8 +357,46 @@
 
 
   <li class="md-nav__item">
-    <a href="../development/database/" title="Database" class="md-nav__link">
-      Database
+    <a href="../development/learning_resources/" title="Learning Resources" class="md-nav__link">
+      Learning Resources
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Development
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development/data/" title="Data" class="md-nav__link">
+      Data
     </a>
   </li>
 
@@ -369,8 +407,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../development/learning_resources/" title="Learning Resources" class="md-nav__link">
-      Learning Resources
+    <a href="../development/predictive_models/" title="Predictive Models" class="md-nav__link">
+      Predictive Models
     </a>
   </li>
 
@@ -513,7 +551,12 @@ heroku git:remote -a crwa-flagging
 <details class="note" open="open"><summary>Note</summary><p>If you see instead see something like <code>[...] State changed from starting to crashed</code>, then read the rest of the output to see what happened. The most common error when deploying to production will be a <code>RuntimeError: Unable to load the vault; bad password provided</code> which is self-explanatory. Update the password, and the website will automatically attempt to redeploy. If you don't see that error, then try to self-diagnose.</p>
 </details>
 <ol start="7">
-<li>Go see the website for yourself!</li>
+<li>
+<p>Go see the website for yourself!</p>
+</li>
+<li>
+<p>You are still not done; you need to do one more step, which is to set up the task scheduler.</p>
+</li>
 </ol>
 <h2 id="subsequent-deployments">Subsequent Deployments</h2>
 <ol>
@@ -552,8 +595,8 @@ git remote -v
 <details class="success" open="open"><summary>Success</summary><p>The above command should output something like this:</p>
 <div class="highlight"><pre><span></span><code>heroku  https://git.heroku.com/crwa-flagging.git <span class="o">(</span>fetch<span class="o">)</span>
 heroku  https://git.heroku.com/crwa-flagging.git <span class="o">(</span>push<span class="o">)</span>
-origin  https://github.com/&lt;your_github_username_here&gt;/flagging.git <span class="o">(</span>fetch<span class="o">)</span>
-origin  https://github.com/&lt;your_github_username_here&gt;/flagging.git <span class="o">(</span>push<span class="o">)</span>
+origin  https://github.com/YOUR_USERNAME_HERE/flagging.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  https://github.com/YOUR_USERNAME_HERE/flagging.git <span class="o">(</span>push<span class="o">)</span>
 staging https://git.heroku.com/crwa-flagging-staging.git <span class="o">(</span>fetch<span class="o">)</span>
 staging https://git.heroku.com/crwa-flagging-staging.git <span class="o">(</span>push<span class="o">)</span>
 upstream        https://github.com/codeforboston/flagging.git <span class="o">(</span>fetch<span class="o">)</span>
