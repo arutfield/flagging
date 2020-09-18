@@ -315,13 +315,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#staging-and-production-split" class="md-nav__link">
-    Staging and Production Split
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -507,13 +500,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#staging-and-production-split" class="md-nav__link">
-    Staging and Production Split
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -545,38 +531,35 @@
 <ol>
 <li>If you have not already done so, pull the repository to your computer, and then change your directory to it:</li>
 </ol>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/codeforboston/flagging.git
-<span class="nb">cd</span> ./flagging
-</code></pre></div>
+<p>```shell script
+git clone <a href="https://github.com/codeforboston/flagging.git">https://github.com/codeforboston/flagging.git</a>
+cd ./flagging
+<div class="highlight"><pre><span></span><code>  Additionally, make sure the `VAULT_PASSWORD` environment variable is set if it has not already been:
 
-<p>Additionally, make sure the <code>VAULT_PASSWORD</code> environment variable is set if it has not already been:</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows (CMD)</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="nb">set</span> <span class="nv">VAULT_PASSWORD</span><span class="o">=</span>replace_me_with_pw
-</code></pre></div>
+=== &quot;Windows (CMD)&quot;
+    ```shell script
+    set VAULT_PASSWORD=replace_me_with_pw
+    ```
+=== &quot;OSX (Bash)&quot;
+    ```shell script
+    export VAULT_PASSWORD=replace_me_with_pw
+    ```
 
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OSX (Bash)</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">VAULT_PASSWORD</span><span class="o">=</span>replace_me_with_pw
-</code></pre></div>
+2. Login to Heroku, and add Heroku as a remote repo using Heroku&#39;s CLI:
 
-</div>
-</div>
-<ol start="2">
-<li>Login to Heroku, and add Heroku as a remote repo using Heroku's CLI:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>heroku login
+```shell
+heroku login
 heroku git:remote -a crwa-flagging
-</code></pre></div>
-
+</code></pre></div></p>
 <ol start="3">
 <li>Add the vault password as an environment variable to Heroku.</li>
 </ol>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Windows (CMD)</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows (CMD)</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>heroku config:set <span class="nv">VAULT_PASSWORD</span><span class="o">=</span>%VAULT_PASSWORD%
 </code></pre></div>
 
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">OSX (Bash)</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OSX (Bash)</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>heroku config:set <span class="nv">VAULT_PASSWORD</span><span class="o">=</span><span class="si">${</span><span class="nv">VAULT_PASSWORD</span><span class="si">}</span>
 </code></pre></div>
 
@@ -585,15 +568,13 @@ heroku git:remote -a crwa-flagging
 <ol start="4">
 <li>Now deploy the app!</li>
 </ol>
-<div class="highlight"><pre><span></span><code>git push heroku master
-</code></pre></div>
+<p>```shell script
+git push heroku master
+<div class="highlight"><pre><span></span><code>5. Now try the following:
 
-<ol start="5">
-<li>Now try the following:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>heroku logs --tail
-</code></pre></div>
-
+```shell script
+heroku logs --tail
+</code></pre></div></p>
 <ol start="6">
 <li>If everything worked out, you should see the following at or near the bottom of the log:</li>
 </ol>
@@ -619,59 +600,57 @@ heroku git:remote -a crwa-flagging
 <ol start="2">
 <li>Once you have done that, Heroku will redeploy the site when you merge your working branch:</li>
 </ol>
-<div class="highlight"><pre><span></span><code>git push heroku master
-</code></pre></div>
+<p>```shell script
+git push heroku master
+<div class="highlight"><pre><span></span><code>???+ tip
+    If you are having any issues here related to merge conflicts, instead of deleting everything and starting over, try to pull the data from the `heroku` branch in and merge it into your local branch.
 
-<details class="tip" open="open"><summary>Tip</summary><p>If you are having any issues here related to merge conflicts, instead of deleting everything and starting over, try to pull the data from the <code>heroku</code> branch in and merge it into your local branch.</p>
-<div class="highlight"><pre><span></span><code>git fetch heroku
-git pull heroku master
-</code></pre></div>
+    ```shell script
+    git fetch heroku
+    git pull heroku master
+    ```
 
-</details>
-<h2 id="staging-and-production-split">Staging and Production Split</h2>
-<p>It is recommended, though not required, that you have both "staging" and "production" environments for the website (see <a href="https://en.wikipedia.org/wiki/Deployment_environment#Staging">here</a> for an explanation), and furthermore it is recommended you deploy to staging and play around with the website to see if it looks right before you ever deploy to production.</p>
-<p>Managing effectively two separate Heroku apps from a single repository requires a bit of knowledge about how git works. Basically what you're doing is connecting to two separate remote git repositories. The default remote repo is called <code>heroku</code> and it was created by Heroku's CLI. But since you now have two Heroku remote repositories, the Heroku CLI doesn't know what it's supposed to name the 2nd one. So you have to manually name it using git.</p>
-<ol>
-<li>Run the following command to create a staging environment if it does not already exist.</li>
-</ol>
-<div class="highlight"><pre><span></span><code>heroku create crwa-flagging-staging
-</code></pre></div>
+## Staging and Production Split
 
+It is recommended, though not required, that you have both &quot;staging&quot; and &quot;production&quot; environments for the website (see [here](https://en.wikipedia.org/wiki/Deployment_environment#Staging) for an explanation), and furthermore it is recommended you deploy to staging and play around with the website to see if it looks right before you ever deploy to production.
+
+Managing effectively two separate Heroku apps from a single repository requires a bit of knowledge about how git works. Basically what you&#39;re doing is connecting to two separate remote git repositories. The default remote repo is called `heroku` and it was created by Heroku&#39;s CLI. But since you now have two Heroku remote repositories, the Heroku CLI doesn&#39;t know what it&#39;s supposed to name the 2nd one. So you have to manually name it using git.
+
+1. Run the following command to create a staging environment if it does not already exist.
+
+```shell script
+heroku create crwa-flagging-staging
+</code></pre></div></p>
 <ol start="2">
 <li>Once it exists, add the staging environment as a remote; check to make sure all the remotes look right. The <code>heroku</code> remote should correspond with the production environment, and the <code>staging</code> remote should correspond with the staging environment you just created.</li>
 </ol>
-<div class="highlight"><pre><span></span><code>git remote add staging https://git.heroku.com/crwa-flagging-staging.git
-git remote -v
-</code></pre></div>
-
+<p><code>shell script
+git remote add staging https://git.heroku.com/crwa-flagging-staging.git
+git remote -v</code></p>
 <details class="success" open="open"><summary>Success</summary><p>The above command should output something like this:</p>
-<div class="highlight"><pre><span></span><code>heroku  https://git.heroku.com/crwa-flagging.git <span class="o">(</span>fetch<span class="o">)</span>
-heroku  https://git.heroku.com/crwa-flagging.git <span class="o">(</span>push<span class="o">)</span>
-origin  https://github.com/YOUR_USERNAME_HERE/flagging.git <span class="o">(</span>fetch<span class="o">)</span>
-origin  https://github.com/YOUR_USERNAME_HERE/flagging.git <span class="o">(</span>push<span class="o">)</span>
-staging https://git.heroku.com/crwa-flagging-staging.git <span class="o">(</span>fetch<span class="o">)</span>
-staging https://git.heroku.com/crwa-flagging-staging.git <span class="o">(</span>push<span class="o">)</span>
-upstream        https://github.com/codeforboston/flagging.git <span class="o">(</span>fetch<span class="o">)</span>
-upstream        https://github.com/codeforboston/flagging.git <span class="o">(</span>push<span class="o">)</span>
-</code></pre></div>
-
+<p><code>heroku  https://git.heroku.com/crwa-flagging.git (fetch)
+heroku  https://git.heroku.com/crwa-flagging.git (push)
+origin  https://github.com/YOUR_USERNAME_HERE/flagging.git (fetch)
+origin  https://github.com/YOUR_USERNAME_HERE/flagging.git (push)
+staging https://git.heroku.com/crwa-flagging-staging.git (fetch)
+staging https://git.heroku.com/crwa-flagging-staging.git (push)
+upstream        https://github.com/codeforboston/flagging.git (fetch)
+upstream        https://github.com/codeforboston/flagging.git (push)</code></p>
 </details>
 <ol start="3">
 <li>Now all of your <code>heroku</code> commands are going to require specifying the app, but the steps to deploy in staging are otherwise similar to the production deployment:</li>
 </ol>
-<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Windows (CMD)</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>heroku config:set --app crwa-flagging-staging <span class="nv">VAULT_PASSWORD</span><span class="o">=</span>%VAULT_PASSWORD%
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Windows (CMD)</label><div class="tabbed-content">
+<p><code>shell script
+heroku config:set --app crwa-flagging-staging VAULT_PASSWORD=%VAULT_PASSWORD%
 git push staging master
-heroku logs --app crwa-flagging-staging --tail
-</code></pre></div>
-
+heroku logs --app crwa-flagging-staging --tail</code></p>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">OSX (Bash)</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>heroku config:set --app crwa-flagging-staging <span class="nv">VAULT_PASSWORD</span><span class="o">=</span><span class="si">${</span><span class="nv">VAULT_PASSWORD</span><span class="si">}</span>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">OSX (Bash)</label><div class="tabbed-content">
+<p><code>shell script
+heroku config:set --app crwa-flagging-staging VAULT_PASSWORD=${VAULT_PASSWORD}
 git push staging master
-heroku logs --app crwa-flagging-staging --tail
-</code></pre></div>
-
+heroku logs --app crwa-flagging-staging --tail</code></p>
 </div>
 </div>
 <ol start="4">
