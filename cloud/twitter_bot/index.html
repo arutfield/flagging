@@ -503,7 +503,7 @@
                 
                 
                 <h1 id="twitter-bot">Twitter Bot</h1>
-<p>Every time the website updates, it sends out a tweet.</p>
+<p>Every time the website updates, it sends out a tweet. In order for it to do that though, you need to set up a Twitter account.</p>
 <h2 id="first-time-setup">First Time Setup</h2>
 <p>Follow these steps to set up the Twitter bot for the first time, such as on a new Twitter account.</p>
 <ol>
@@ -524,15 +524,15 @@
 <ol start="4">
 <li>In the code base, use the <code>VAULT_PASSWORD</code> to unzip the <code>vault.7z</code> manually. You should have a file called <code>secrets.json</code>. Open up <code>secrets.json</code> in the plaintext editor of your choosing.</li>
 </ol>
-<details class="danger" open="open"><summary>Danger</summary><p>Make sure that you delete the unencrpyted, unarchived version of the <code>secrets.json</code> file after you are done with it.</p>
+<details class="danger" open="open"><summary>Danger</summary><p>Make sure that you delete the unencrypted, unarchived version of the <code>secrets.json</code> file after you are done with it.</p>
 </details>
 <ol start="5">
 <li>Now go back to your browser with the Twitter Developer Portal. At the top of the screen, flip to the <code>Keys and tokens</code>. Now it's time to go through the dashboard and get your copy+paste ready. We will be inserting these values into the <code>secrets.json</code> (remember to wrap the keys in double quotes <code>"like this"</code> when you insert them).</li>
 </ol>
 <ul>
-<li>The <code>API Key &amp; Secret</code> should should go in the corresponding fields for <code>"api_key": "..."</code> and <code>"api_key_secret": "..."</code>.</li>
-<li>The <code>Bearer Token</code> should go in the field <code>"bearer_token": "..."</code>.</li>
-<li>The <code>Access Token &amp; Secret</code> should go in the corresponding fields for <code>"access_token": "..."</code> and <code>"access_token_secret": "..."</code>. <em>But first, you will need to regenerate the <code>Access Token &amp; Secret</code> so that it has both read and write permissions.</em></li>
+<li>The <code>API Key &amp; Secret</code> should should go in the corresponding fields for <code class="highlight"><span class="s2">&quot;api_key&quot;</span><span class="err">:</span> <span class="s2">&quot;...&quot;</span></code> and <code class="highlight"><span class="s2">&quot;api_key_secret&quot;</span><span class="err">:</span> <span class="s2">&quot;...&quot;</span></code>.</li>
+<li>The <code>Bearer Token</code> should go in the field <code class="highlight"><span class="s2">&quot;bearer_token&quot;</span><span class="err">:</span> <span class="s2">&quot;...&quot;</span></code>.</li>
+<li>The <code>Access Token &amp; Secret</code> should go in the corresponding fields for <code class="highlight"><span class="s2">&quot;access_token&quot;</span><span class="err">:</span> <span class="s2">&quot;...&quot;</span></code> and <code class="highlight"><span class="s2">&quot;access_token_secret&quot;</span><span class="err">:</span> <span class="s2">&quot;...&quot;</span></code>. <em>But first, you will need to regenerate the <code>Access Token &amp; Secret</code> so that it has both read and write permissions.</em></li>
 </ul>
 <details class="success" open="open"><summary>Success</summary><p>The <code>secrets.json</code> file should look something like this, with the ellipses replacing the actual values:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
