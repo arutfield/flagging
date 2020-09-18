@@ -580,9 +580,9 @@ python3 -m pip install -r requirements.txt
 </details>
 <h2 id="available-shell-functions-and-variables">Available Shell Functions and Variables</h2>
 <ul>
-<li><code>app</code> <code class="highlight"><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">Flask</span><span class="p">)</span></code>:
+<li><strong><code>app</code></strong> (<em>flask.Flask</em>):
   The actual Flask app instance.</li>
-<li><strong><code>db</code></strong> <code class="highlight"><span class="n">flask_sqlalchemy</span><span class="o">.</span><span class="n">SQLAlchemy</span></code>:
+<li><strong><code>db</code></strong> (<em>flask_sqlalchemy.SQLAlchemy</em>):
   The object used to interact with the Postgres database.</li>
 <li><strong><code>get_live_hobolink_data</code></strong> (<em>(Optional[str]) -&gt; pd.DataFrame</em>):
   Gets the HOBOlink data table based on the given "export" name.</li>
@@ -595,8 +595,8 @@ python3 -m pip install -r requirements.txt
 <li><strong><code>compose_tweet</code></strong> (<em>() -&gt; str</em>):
   Generates a message for Twitter that represents the current status of the flagging program (note: this function does not actually send the Tweet to Twitter.com). </li>
 </ul>
-<p>Additionally, Pandas and Numpy are already pre-imported via <code>import pandas as pd</code> and <code>import numpy as np</code>.</p>
-<details class="tip" open="open"><summary>Tip</summary><p>To add more functions and variables that pre-load in the Flask shell, simply add another entry to the dictionary returned by the function <code>make_shell_context()</code> in <code>flagging_site/app.py:creat_app()</code>.</p>
+<p>Additionally, Pandas and Numpy are already pre-imported via <code class="highlight"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span></code> and <code class="highlight"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></code>.</p>
+<details class="tip" open="open"><summary>Tip</summary><p>To add more functions and variables that pre-load in the Flask shell, simply add another entry to the dictionary returned by the function <code class="highlight"><span class="n">make_shell_context</span><span class="p">()</span></code> in <code>flagging_site/app.py:creat_app()</code>.</p>
 </details>
 <details class="tip" open="open"><summary>Tip</summary><p>All of the website's functions can be run in the Flask shell, even those that are not pre-loaded in the shell's global context. All you need to do is import it. For example, let's say you want to get the un-parsed request object from USGS.gov. You can import the function we use and run it like this:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># (in Flask shell)</span>
