@@ -236,8 +236,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../deployment/" title="Deployment" class="md-nav__link">
-      Deployment
+    <a href="../deployment/" title="Remote Deployment" class="md-nav__link">
+      Remote Deployment
     </a>
   </li>
 
@@ -395,6 +395,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../development/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development/config.md" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../development/data/" title="Data" class="md-nav__link">
       Data
     </a>
@@ -409,6 +433,18 @@
   <li class="md-nav__item">
     <a href="../development/predictive_models/" title="Predictive Models" class="md-nav__link">
       Predictive Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development/twitter_bot/" title="Twitter Bot" class="md-nav__link">
+      Twitter Bot
     </a>
   </li>
 
@@ -481,24 +517,28 @@
                 <h1 id="flask-shell-documentation">Flask Shell Documentation</h1>
 <p>The shell is used to access app functions and data, such as Hobolink and USGS
 data and access to the database.</p>
+<p>The reason why the shell is useful is because there may be cases where you want to play around with the app's functions. For example, maybe you see something that seems fishy in the data, so you want to have direct access to the function the website is running. You may also want to </p>
+<p>The way Flask works makes it impossible to run the website's functions outside the Flask app context, which means importing the functions into a naked shell doesn't work as intended. The <code>flask shell</code> provides all the tools needed to let coders access the functions the exact same way the website does, except in a shell environment.</p>
 <h2 id="available-shell-functions-and-variables">Available Shell Functions and Variables</h2>
 <ul>
-<li><code>db</code> (<em>flask_sqlalchemy.SQLAlchemy</em>):
+<li><strong><code>app</code></strong> (<em>flask.Flask</em>):
+  The actual Flask app instance.</li>
+<li><strong><code>db</code></strong> (<em>flask_sqlalchemy.SQLAlchemy</em>):
   The object used to interact with the Postgres database.</li>
-<li><code>get_live_hobolink_data</code> (<em>(Optional[str]) -&gt; pd.DataFrame</em>):
-  Gets the Hobolink data table based on the given "export" name.
-  See <code>flagging_site/data/hobolink.py</code> for details.</li>
-<li><code>get_live_usgs_data</code> (<em>() -&gt; pd.DataFrame</em>):
-  Gets the USGS data table.
-  See <code>flagging_site/data/usgs.py</code> for details.</li>
-<li><code>get_data</code> (<em>() -&gt; pd.DataFrame</em>):
+<li><strong><code>get_live_hobolink_data</code></strong> (<em>(Optional[str]) -&gt; pd.DataFrame</em>):
+  Gets the HOBOlink data table based on the given "export" name.</li>
+<li><strong><code>get_live_usgs_data</code></strong> (<em>() -&gt; pd.DataFrame</em>):
+  Gets the USGS data table.</li>
+<li><strong><code>get_data</code></strong> (<em>() -&gt; pd.DataFrame</em>):
   Gets the Hobolink and USGS data tables and returns a combined table.</li>
-<li><code>process_data</code> (<em>(pd.DataFrame, pd.DataFrame) -&gt; pd.DataFrame</em>):
-  Combines the Hobolink and USGS tables.
-  See <code>flagging_site/data/model.py</code> for details.</li>
+<li><strong><code>process_data</code></strong> (<em>(pd.DataFrame, pd.DataFrame) -&gt; pd.DataFrame</em>):
+  Combines the Hobolink and USGS tables.</li>
+<li><strong><code>compose_tweet</code></strong> (<em>() -&gt; str</em>):
+  Generates a message for Twitter that represents the current status of the flagging program (note: this function does not actually send the Tweet to Twitter.com). </li>
 </ul>
-<p>To add more functions and variables, simply add an entry to the dictionary
-returned by the function <code>make_shell_context()</code> in <code>flagging_site/app.py:creat_app()</code>.</p>
+<p>Additionally, Pandas and Numpy are already pre-imported via <code>import pandas as pd</code> and <code>import numpy as np</code>.</p>
+<details class="tip" open="open"><summary>Tip</summary><p>To add more functions and variables that pre-load in the Flask shell, simply add another entry to the dictionary returned by the function <code>make_shell_context()</code> in <code>flagging_site/app.py:creat_app()</code>.</p>
+</details>
 <h2 id="running-the-shell">Running the Shell</h2>
 <p>First, open up a terminal at the <code>flagging</code> folder.</p>
 <p>Make sure you have Python 3 installed. Set up your environment with the following commands:</p>
@@ -634,6 +674,8 @@ save it as a CSV file.</p>
           }, typeof search !== "undefined" && search)
         })
       </script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
     
   </body>

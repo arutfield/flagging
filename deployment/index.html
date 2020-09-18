@@ -17,7 +17,7 @@
     
     
       
-        <title>Deployment - CRWA Flagging Website Documentation</title>
+        <title>Remote Deployment - CRWA Flagging Website Documentation</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deployment" class="md-skip">
+        <a href="#remote-deployment" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Deployment
+              Remote Deployment
             
           </span>
         </div>
@@ -245,12 +245,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Deployment
+        Remote Deployment
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="Deployment" class="md-nav__link md-nav__link--active">
-      Deployment
+    <a href="./" title="Remote Deployment" class="md-nav__link md-nav__link--active">
+      Remote Deployment
     </a>
     
       
@@ -395,6 +395,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../development/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development/config.md" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../development/data/" title="Data" class="md-nav__link">
       Data
     </a>
@@ -409,6 +433,18 @@
   <li class="md-nav__item">
     <a href="../development/predictive_models/" title="Predictive Models" class="md-nav__link">
       Predictive Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development/twitter_bot/" title="Twitter Bot" class="md-nav__link">
+      Twitter Bot
     </a>
   </li>
 
@@ -478,8 +514,8 @@
                   
                 
                 
-                <h1 id="deployment">Deployment</h1>
-<details class="note" open="open"><summary>Note</summary><p>This guide is an instruction manual on how to deploy the flagging website to internet via Heroku. If you just want to run the website locally, you do not need Heroku. Instead, check out the <a href="/development">development</a> guide.</p>
+                <h1 id="remote-deployment">Remote Deployment</h1>
+<details class="note" open="open"><summary>Note</summary><p>This guide is an instruction manual on how to deploy the flagging website to the internet via Heroku. If you just want to run the website locally, you do not need Heroku. Instead, check out the <a href="/development">development</a> guide.</p>
 </details>
 <p>The following tools are required to deploy the website:</p>
 <ul>
@@ -734,6 +770,8 @@ heroku logs --app crwa-flagging-staging --tail
           }, typeof search !== "undefined" && search)
         })
       </script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
     
   </body>

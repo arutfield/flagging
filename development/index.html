@@ -17,7 +17,7 @@
     
     
       
-        <title>Development - CRWA Flagging Website Documentation</title>
+        <title>Overview - CRWA Flagging Website Documentation</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#development" class="md-skip">
+        <a href="#development-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Development
+              Overview
             
           </span>
         </div>
@@ -236,8 +236,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../deployment/" title="Deployment" class="md-nav__link">
-      Deployment
+    <a href="../deployment/" title="Remote Deployment" class="md-nav__link">
+      Remote Deployment
     </a>
   </li>
 
@@ -320,10 +320,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
       Development
@@ -336,6 +338,68 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
+      Overview
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-diagram" class="md-nav__link">
+    Dependency Diagram
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="config.md" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
         
           
           
@@ -357,6 +421,18 @@
   <li class="md-nav__item">
     <a href="predictive_models/" title="Predictive Models" class="md-nav__link">
       Predictive Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="twitter_bot/" title="Twitter Bot" class="md-nav__link">
+      Twitter Bot
     </a>
   </li>
 
@@ -383,6 +459,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-diagram" class="md-nav__link">
+    Dependency Diagram
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -397,12 +488,59 @@
                   
                 
                 
-                <h1 id="development">Development</h1>
+                <h1 id="development-overview">Development - Overview</h1>
 <p>The Development guide is aimed at users who wish to understand the code base and make changes to it if need be.</p>
+<p>This overview page describes at a high-level what the website's infrastructure is, how it all relates, and why those things are in the app.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Make sure to go through the <a href="../../setup">setup guide</a> before doing anything in the development guide.</p>
 </div>
+<h2 id="dependency-diagram">Dependency Diagram</h2>
+<div class="mermaid">classDiagram
+Heroku &lt;.. gunicorn
+gunicorn &lt;.. Flask : create_app()
+gunicorn : /../Procfile
+Heroku &lt;.. PostgreSQL
+class Flask
+Flask : /app.py
+Flask : create_app()
+Flask : app = Flask(...)
+class Config
+Config : /config.py
+Config : config = get_config_from_env(...)
+class vault
+vault : /vault.7z
+vault : /app.py
+Config &lt;.. vault : update_config_from_vault(app)
+class Swagger
+Swagger : /app.py
+Swagger : Swagger(app, ...)
+Flask &lt;.. Swagger : init_swagger(app)
+Swagger ..&gt; blueprints : wraps RESTful API
+Flask &lt;.. Config : app.config.from_object(config)
+class SQLAlchemy
+SQLAlchemy : /data/database.py
+SQLAlchemy : db = SqlAlchemy()
+class Jinja2
+Jinja2 : /app.py
+Flask &lt;.. Jinja2 : Built-in Flask
+SQLAlchemy &lt;.. PostgreSQL: Connected via psycopg2
+Flask &lt;.. SQLAlchemy : db.init_app(app)
+class blueprints
+blueprints : blueprints/flagging.py
+blueprints : blueprints/api.py
+blueprints : app.register_blueprint(...)
+Flask &lt;.. blueprints
+Jinja2 &lt;.. blueprints : Renders HTML
+class Admin
+Admin : /admin.py
+Admin: admin = Admin(...)
+SQLAlchemy &lt;.. Admin
+Flask &lt;.. Admin : init_admin(app)
+class BasicAuth
+BasicAuth : /admin.py
+BasicAuth : auth = BasicAuth()
+BasicAuth ..&gt; Admin</div>
                 
               
               
@@ -417,6 +555,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="learning_resources/" title="Learning Resources" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Learning Resources
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="data/" title="Data" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Data
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -477,6 +650,8 @@
           }, typeof search !== "undefined" && search)
         })
       </script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
     
   </body>
