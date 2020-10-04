@@ -537,6 +537,12 @@ heroku git:remote -a crwa-flagging
 </code></pre></div>
 
 <ol start="4">
+<li>You need to setup the <code>FLASK_ENV</code> environment variable. This is mainly used for the scheduler and other potential add-ons as a way to ensure that the production config is always being used.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>heroku config:set <span class="nv">FLASK_ENV</span><span class="o">=</span>production -a crwa-flagging
+</code></pre></div>
+
+<ol start="5">
 <li>Add a <code>BASIC_AUTH_USERNAME</code> and <code>BASIC_AUTH_PASSWORD</code> for the admin panel. The username can be whatever you want; e.g. <code>admin</code> does the trick. The password should be hard to guess.</li>
 </ol>
 <div class="highlight"><pre><span></span><code>heroku config:set <span class="nv">BASIC_AUTH_USERNAME</span><span class="o">=</span>admin -a crwa-flagging
@@ -545,7 +551,7 @@ heroku config:set <span class="nv">BASIC_AUTH_PASSWORD</span><span class="o">=</
 
 <details class="danger" open="open"><summary>Danger</summary><p>The password should be <em>unique</em> to this platform, not a universal password you use for everything. The password is <em>not</em> encrypted when stoerd, and it is visible to anyone who has access to the Heroku dashboard.</p>
 </details>
-<ol start="5">
+<ol start="6">
 <li>Add some Heroku add-ons.</li>
 </ol>
 <div class="highlight"><pre><span></span><code>heroku addons:create scheduler -a crwa-flagging
@@ -562,7 +568,7 @@ Created postgresql-ukulele-12345 as DATABASE_URL
 
 <p>In the above case, <code>postgresql-ukulele-12345</code> is the "name" of the PostgreSQL add-on's dyno. We will be using this name in the next step.</p>
 </details>
-<ol start="6">
+<ol start="7">
 <li>Push your local copy of the flagging database to the cloud. In the following command, replace <code>postgresql-ukulele-12345</code> with whatever the name of your PostgreSQL dyno is, which should have output from the previous step.</li>
 </ol>
 <div class="highlight"><pre><span></span><code>heroku pg:push flagging postgresql-ukulele-12345 -a crwa-flagging
@@ -570,19 +576,19 @@ Created postgresql-ukulele-12345 as DATABASE_URL
 
 <details class="note" open="open"><summary>Note</summary><p>The above command assumes that your local Postgres database is up-to-date.</p>
 </details>
-<ol start="7">
+<ol start="8">
 <li>Deploy the app.</li>
 </ol>
 <div class="highlight"><pre><span></span><code>git push heroku master
 </code></pre></div>
 
-<ol start="8">
+<ol start="9">
 <li>Now try the following:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>heroku logs --tail
 </code></pre></div>
 
-<ol start="9">
+<ol start="10">
 <li>If everything worked out, you should see the following at or near the bottom of the log:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>2020-06-13T23:17:54.000000+00:00 app[api]: Build succeeded
@@ -590,7 +596,7 @@ Created postgresql-ukulele-12345 as DATABASE_URL
 
 <details class="note" open="open"><summary>Note</summary><p>If you see instead see something like <code>[...] State changed from starting to crashed</code>, then read the rest of the output to see what happened. The most common error when deploying to production will be a <code>RuntimeError: Unable to load the vault; bad password provided</code> which is self-explanatory. Update the password, and the website will automatically attempt to redeploy. If you don't see that error, then try to self-diagnose.</p>
 </details>
-<ol start="10">
+<ol start="11">
 <li>
 <p>Go see the website for yourself!</p>
 </li>
@@ -601,7 +607,7 @@ Created postgresql-ukulele-12345 as DATABASE_URL
 <div class="highlight"><pre><span></span><code>heroku addons:open scheduler -a crwa-flagging
 </code></pre></div>
 
-<ol start="12">
+<ol start="13">
 <li>The above command should open up a new window in your browser that lets you add a command that runs on a schedule. That command you set should be <code>python3 -m flask update-website</code>, and you should run it once a day at 11:00 AM UTC:</li>
 </ol>
 <p><img alt="" src="../../img/scheduler_config.png" /></p>
