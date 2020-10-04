@@ -663,8 +663,18 @@ git fetch upstream
 <li>Run the actual website.</li>
 </ol>
 </details>
+<details class="tip" open="open"><summary>Tip</summary><p>If you are receiving any errors related to the Postgres database and you are certain that Postgres is running on your computer, you can modify the <code>POSTGRES_USERNAME</code> and <code>POSTGRES_PASSWORD</code> environment variables to connect to your local Postgres instance properly.</p>
+</details>
 <ol start="2">
-<li>For the first prompt, type <code>y</code> to run the website in offline mode. For the subsequent two prompts, <span class="keys"><kbd class="key-enter">Enter</kbd></span> through them without inputting anything.</li>
+<li>You will be prompted asking if you want to run the website in offline mode. "Offline mode" is a way to run the website with dummy data without accessing the credentials. It is useful for anyone who wants to run a demo of the website regardless of their affiliation with the CRWA or this project. It can also be useful for development purposes.</li>
+</ol>
+<details class="tip" open="open"><summary>Tip</summary><ul>
+<li>If you have a working <code>VAULT_PASSWORD</code>, type <span class="keys"><kbd class="key-n">N</kbd></span> -&gt; <span class="keys"><kbd class="key-enter">Enter</kbd></span>. This runs the website as normal.</li>
+<li>If you do <em>not</em> have the <code>VAULT_PASSWORD</code>, type <span class="keys"><kbd class="key-y">Y</kbd></span> -&gt; <span class="keys"><kbd class="key-enter">Enter</kbd></span> to turn offline mode on.</li>
+</ul>
+</details>
+<ol start="3">
+<li>Now just wait for the database to start filling in and for the website to eventually run.</li>
 </ol>
 <details class="success" open="open"><summary>Success</summary><p>You should be good if you eventually see something like the following in your terminal:</p>
 <div class="highlight"><pre><span></span><code> * Serving Flask app &quot;flagging_site:create_app&quot; (lazy loading)
@@ -675,9 +685,10 @@ git fetch upstream
 </code></pre></div>
 
 </details>
-<ol start="3">
+<ol start="4">
 <li>Point your browser of choice to the URL shown in the terminal output. If everything worked out, the website should be running on your local computer!</li>
 </ol>
+<p><img alt="" src="../img/successful_run.png" /></p>
                 
               
               
