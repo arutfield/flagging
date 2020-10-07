@@ -666,11 +666,11 @@ git fetch upstream
 <details class="tip" open="open"><summary>Tip</summary><p>If you are receiving any errors related to the Postgres database and you are certain that Postgres is running on your computer, you can modify the <code>POSTGRES_USERNAME</code> and <code>POSTGRES_PASSWORD</code> environment variables to connect to your local Postgres instance properly.</p>
 </details>
 <ol start="2">
-<li>You will be prompted asking if you want to run the website in offline mode. "Offline mode" is a way to run the website with dummy data without accessing the credentials. It is useful for anyone who wants to run a demo of the website regardless of their affiliation with the CRWA or this project. It can also be useful for development purposes.</li>
+<li>You will be prompted asking if you want to run the website with mock data. The <code>USE_MOCK_DATA</code> variable is a way to run the website with dummy data without accessing the credentials. It is useful for anyone who wants to run a demo of the website regardless of their affiliation with the CRWA or this project. It has also been useful for development purposes in the past for us.</li>
 </ol>
 <details class="tip" open="open"><summary>Tip</summary><ul>
 <li>If you have a working <code>VAULT_PASSWORD</code>, type <span class="keys"><kbd class="key-n">N</kbd></span> -&gt; <span class="keys"><kbd class="key-enter">Enter</kbd></span>. This runs the website as normal.</li>
-<li>If you do <em>not</em> have the <code>VAULT_PASSWORD</code>, type <span class="keys"><kbd class="key-y">Y</kbd></span> -&gt; <span class="keys"><kbd class="key-enter">Enter</kbd></span> to turn offline mode on.</li>
+<li>If you do <em>not</em> have the <code>VAULT_PASSWORD</code>, type <span class="keys"><kbd class="key-y">Y</kbd></span> -&gt; <span class="keys"><kbd class="key-enter">Enter</kbd></span> to turn on mock data.</li>
 </ul>
 </details>
 <ol start="3">
